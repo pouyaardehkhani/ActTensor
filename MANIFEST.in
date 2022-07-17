@@ -1,3 +1,3 @@
-include aesthetic_ascii/*.png
-include aesthetic_ascii/*.jpg
-include aesthetic_ascii/*.ttf
+include act_tensor/*.png
+include act_tensor/*.jpg
+include act_tensor/*.ttf
