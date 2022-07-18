@@ -208,6 +208,21 @@ def SinReLU(x):
     """
     return tf.math.maximum(0,x) + tf.math.sin(x)
 
+def Probit(x):
+    """
+    Probit Activation Function also known as  Cumulative distribution function (CDF)
+    
+    Range : (-infinity to infinity)
+    
+    Parameters
+    ----------
+    x : tensor object
+        
+    Returns
+    -------
+    tensor
+    """
+    return tf.math.multiply(tf.math.sqrt(2.) , tf.math.erfinv( tf.math.subtract(tf.math.multiply(x, 2), 1)))
 
 
 
