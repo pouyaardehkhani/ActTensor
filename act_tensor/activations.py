@@ -312,7 +312,25 @@ def Smish(x):
     """
     return tf.math.multiply(x, tf.math.tanh(tf.math.log(tf.math.add(1., Sigmoid(x)))))
 
-
+def PSmish(x, alpha = 1., beta = 1.):
+    """
+    Parametric Smish Activation Function
+    
+    Parameters
+    ----------
+    x : tensor object
+    alpha : float, default 1.
+            alpha weight.
+    alpha : float, default 1.
+            beta weight.
+        
+    Returns
+    -------
+    tensor
+    """
+    a = tf.math.multiply(alpha, x)
+    b = tf.math.multiply(beta, x)
+    return tf.math.multiply(a, tf.math.tanh(tf.math.log(tf.math.add(1., Sigmoid(b)))))
 
     
 
