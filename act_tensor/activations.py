@@ -269,8 +269,36 @@ def Multiquadratic(x, px, py):
     Returns
     -------
     tensor
+    
+    notes
+    -----
+    px and py must be float or this will not work.
     """
     return tf.math.sqrt(tf.math.add(tf.math.pow(tf.math.subtract(x,px ),2), tf.math.pow(py, 2)))
+
+def InvMultiquadratic(x, px, py):
+    """
+    Inverse Multiquadratic Activation Function
+    
+    Parameters
+    ----------
+    x : tensor object
+    px: float
+        x dimension of chosen point
+    py: float
+        y dimension of chosen point
+        
+    Returns
+    -------
+    tensor
+    
+    notes
+    -----
+    px and py must be float or this will not work.
+    """
+    return 1./(tf.math.sqrt(tf.math.add(tf.math.pow(tf.math.subtract(x,px ),2), tf.math.pow(py, 2))))
+
+
 
 
 
