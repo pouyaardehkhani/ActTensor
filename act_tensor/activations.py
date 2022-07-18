@@ -122,7 +122,23 @@ def BSigmoid(x):
     """
     return (1-tf.math.exp(-x))/(1+tf.math.exp(-x))
 
-
+def LeCunTanh(x):
+    """
+    LeCun's Tanh Activation Function
+    
+    Used for efficient backprop.
+    
+    Range : (-1.7159 to 1.7159)
+    
+    Parameters
+    ----------
+    x : tensor object
+        
+    Returns
+    -------
+    tensor
+    """
+    return (1.7159 * tf.math.tanh((2/3) * x))
 
 
 
