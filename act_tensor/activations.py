@@ -362,7 +362,26 @@ def CoLU(x):
     a = tf.math.pow(x,b)
     return tf.math.divide(x,tf.math.subtract(1., a))
 
-  
+def SOFTSHRINK(x, alpha):
+    """
+    SOFTSHRINK Activation Function
+    
+    Parameters
+    ----------
+    x : tensor object
+    alpha : int, float
+        
+    Returns
+    -------
+    tensor
+    """
+    dtype = getattr(x, "dtype", floatx())
+    x.numpy()
+    x = np.where((x > (-alpha)) & (x < alpha),0,x)
+    x = np.where(x >= alpha, x - alpha, x)
+    x = np.where(x <= (-alpha), x + alpha, x)
+    x = tf.cast(x, dtype)
+    return x
 
 
 
