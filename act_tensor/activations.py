@@ -6,7 +6,7 @@ from tensorflow.keras import backend as K
 
 def Identity(x):
     """
-    Linear activation function f(x)=x.
+    Linear Activation Function f(x)=x
     
     Range : (-infinity to infinity)
     
@@ -22,7 +22,7 @@ def Identity(x):
 
 def Step(x):
     """
-    Binary step activation function.
+    Binary Step Activation Function
     
     Range : (0 , 1)
     
@@ -42,7 +42,7 @@ def Step(x):
 
 def PLinear(x, xmin, xmax):
     """
-    Piecewise Linear activation function.
+    Piecewise Linear Activation Function
     
     Choose some xmin and xmax, which is our "range". Everything less than than this range will be 0, and everything greater than this range will be 1. Anything else is linearly-interpolated between.
     
@@ -70,7 +70,21 @@ def PLinear(x, xmin, xmax):
     x = tf.cast(x, dtype)
     return x
 
-
+def Cll(x):
+    """
+    Complementary Log-Log Activation Function
+    
+    Range : (0 to 1)
+    
+    Parameters
+    ----------
+    x : tensor object
+        
+    Returns
+    -------
+    tensor
+    """
+    return 1 - (tf.math.exp(-(tf.math.exp(x))))
 
 
 
