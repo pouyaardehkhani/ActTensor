@@ -224,7 +224,21 @@ def Probit(x):
     """
     return tf.math.multiply(tf.math.sqrt(2.) , tf.math.erfinv( tf.math.subtract(tf.math.multiply(x, 2), 1)))
 
-
+def Cosine(x):
+    """
+    Cosine Activation Function
+    
+    Range : (-1 to 1)
+    
+    Parameters
+    ----------
+    x : tensor object
+        
+    Returns
+    -------
+    tensor
+    """
+    return tf.math.cos(x)
 
     
     
