@@ -240,6 +240,22 @@ def Cosine(x):
     """
     return tf.math.cos(x)
 
+def Gaussian(x):
+    """
+    Gaussian Activation Function
     
+    Parameters
+    ----------
+    x : tensor object
+        
+    Returns
+    -------
+    tensor
+    """
+    return tf.math.exp(tf.math.multiply(-0.5, tf.math.pow(x, 2)))
+
+    
+
+
     
     
