@@ -298,7 +298,19 @@ def InvMultiquadratic(x, px, py):
     """
     return 1./(tf.math.sqrt(tf.math.add(tf.math.pow(tf.math.subtract(x,px ),2), tf.math.pow(py, 2))))
 
-
+def Smish(x):
+    """
+    Smish Activation Function
+    
+    Parameters
+    ----------
+    x : tensor object
+        
+    Returns
+    -------
+    tensor
+    """
+    return tf.math.multiply(x, tf.math.tanh(tf.math.log(tf.math.add(1., Sigmoid(x)))))
 
 
 
