@@ -156,7 +156,21 @@ def HardTanh(x):
     """
     return tf.math.maximum(-1, tf.math.minimum(1, x))
 
-
+def Abs(x):
+    """
+    Absolute Activation Function
+    
+    Range : (0 to infinity)
+    
+    Parameters
+    ----------
+    x : tensor object
+        
+    Returns
+    -------
+    tensor
+    """
+    return tf.math.abs(x)
 
     
     
