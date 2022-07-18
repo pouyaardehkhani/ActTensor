@@ -86,7 +86,25 @@ def Cll(x):
     """
     return 1 - (tf.math.exp(-(tf.math.exp(x))))
 
-
+def Bipolar(x):
+    """
+    Bipolar Activation Function
+    
+    Range : (-1 , 1)
+    
+    Parameters
+    ----------
+    x : tensor object
+        
+    Returns
+    -------
+    tensor
+    """
+    dtype = getattr(x, "dtype", floatx())
+    x.numpy()
+    x = np.where(x>0,1,-1)
+    x = tf.cast(x, dtype)
+    return x
 
 
     
