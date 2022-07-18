@@ -332,7 +332,23 @@ def PSmish(x, alpha = 1., beta = 1.):
     b = tf.math.multiply(beta, x)
     return tf.math.multiply(a, tf.math.tanh(tf.math.log(tf.math.add(1., Sigmoid(b)))))
 
+def GCU(x):
+    """
+    Growing Cosine Unit Activation Function
     
+    Parameters
+    ----------
+    x : tensor object
+        
+    Returns
+    -------
+    tensor
+    """
+    return tf.math.multiply(x, tf.math.cos(x))
+
+
+
+  
 
 
     
