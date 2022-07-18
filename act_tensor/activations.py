@@ -346,7 +346,21 @@ def GCU(x):
     """
     return tf.math.multiply(x, tf.math.cos(x))
 
-
+def CoLU(x):
+    """
+    Collapsing Linear Unit Activation Function
+    
+    Parameters
+    ----------
+    x : tensor object
+        
+    Returns
+    -------
+    tensor
+    """
+    b = tf.math.multiply(-1.,(tf.math.add(x, tf.math.exp(x))))
+    a = tf.math.pow(x,b)
+    return tf.math.divide(x,tf.math.subtract(1., a))
 
   
 
