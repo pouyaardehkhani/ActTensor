@@ -172,7 +172,29 @@ def Abs(x):
     """
     return tf.math.abs(x)
 
+def CosReLU(x):
+    """
+    Modification for ReLU Activation Function 
     
+    a = σ(z) = max(0, z) + cos(z).
+    
+    Range : (-1 to infinity)
+    
+    Parameters
+    ----------
+    x : tensor object
+        
+    Returns
+    -------
+    tensor
+    """
+    return tf.math.maximum(0,x) + tf.math.cos(x)
+
+
+
+
+
+
     
     
     
