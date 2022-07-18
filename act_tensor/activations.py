@@ -140,7 +140,21 @@ def LeCunTanh(x):
     """
     return (1.7159 * tf.math.tanh((2/3) * x))
 
-
+def HardTanh(x):
+    """
+    Hard Tanh Activation Function
+    
+    Range : (-1 to 1)
+    
+    Parameters
+    ----------
+    x : tensor object
+        
+    Returns
+    -------
+    tensor
+    """
+    return tf.math.maximum(-1, tf.math.minimum(1, x))
 
 
 
