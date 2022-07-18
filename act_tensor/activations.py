@@ -254,6 +254,26 @@ def Gaussian(x):
     """
     return tf.math.exp(tf.math.multiply(-0.5, tf.math.pow(x, 2)))
 
+def Multiquadratic(x, px, py):
+    """
+    Multiquadratic Activation Function
+    
+    Parameters
+    ----------
+    x : tensor object
+    px: float
+        x dimension of chosen point
+    py: float
+        y dimension of chosen point
+        
+    Returns
+    -------
+    tensor
+    """
+    return tf.math.sqrt(tf.math.add(tf.math.pow(tf.math.subtract(x,px ),2), tf.math.pow(py, 2)))
+
+
+
     
 
 
