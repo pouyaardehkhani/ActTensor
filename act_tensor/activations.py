@@ -106,6 +106,27 @@ def Bipolar(x):
     x = tf.cast(x, dtype)
     return x
 
+def BSigmoid(x):
+    """
+    Bipolar Sigmoid Activation Function
+    
+    Range : (-1 to 1)
+    
+    Parameters
+    ----------
+    x : tensor object
+        
+    Returns
+    -------
+    tensor
+    """
+    return (1-tf.math.exp(-x))/(1+tf.math.exp(-x))
+
+
+
+
+
+
 
     
     
