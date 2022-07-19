@@ -50,6 +50,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ReLU.png"> 
 </p>
 
+* [Source Paper : Nair, Vinod, and Geoffrey E. Hinton. "Rectified linear units improve restricted boltzmann machines." In Icml. 2010.](https://www.cs.toronto.edu/~fritz/absps/reluICML.pdf)
+
 10. Identity:
 
     $f(x) = x$
@@ -74,6 +76,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Sigmoid.png"> 
 </p>
 
+* [Source Paper : Han, Jun, and Claudio Moraga. "The influence of the sigmoid function parameters on the speed of backpropagation learning." In International workshop on artificial neural networks, pp. 195-201. Springer, Berlin, Heidelberg, 1995.](https://link.springer.com/chapter/10.1007/3-540-59497-3_175)
+
 13. Hard Sigmoid:
 
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;max(0,&space;min(1,\frac{x&plus;1}{2}))">
@@ -81,6 +85,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/HardSigmoid.png"> 
 </p>
+
+* [Source Paper : Courbariaux, Matthieu, Yoshua Bengio, and Jean-Pierre David. "Binaryconnect: Training deep neural networks with binary weights during propagations." Advances in neural information processing systems 28 (2015).](https://arxiv.org/abs/1511.00363)
 
 14. Log Sigmoid:
 
@@ -98,6 +104,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/SiLU.png"> 
 </p>
 
+* [Source Paper : Elfwing, Stefan, Eiji Uchibe, and Kenji Doya. "Sigmoid-weighted linear units for neural network function approximation in reinforcement learning." Neural Networks 107 (2018): 3-11.](https://arxiv.org/abs/1702.03118)
+
 16. ParametricLinear:
 
 17. PiecewiseLinear:
@@ -109,6 +117,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Complementary%20Log-Log.png"> 
 </p>
+
+* [Source Paper : Gomes, Gecynalda S. da S., and Teresa B. Ludermir. "Complementary log-log and probit: activation functions implemented in artificial neural networks." In 2008 Eighth International Conference on Hybrid Intelligent Systems, pp. 939-942. IEEE, 2008.](https://www.computer.org/csdl/proceedings-article/his/2008/3326a939/12OmNxHrykP)
 
 19. Bipolar:
 
@@ -126,6 +136,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/BipolarSigmoid.png"> 
 </p>
 
+* [Source Paper : Mansor, Mohd Asyraf, and Saratha Sathasivam. "Activation function comparison in neural-symbolic integration." In AIP Conference Proceedings, vol. 1750, no. 1, p. 020013. AIP Publishing LLC, 2016.](https://aip.scitation.org/doi/10.1063/1.4954526)
+
 21. Tanh:
 
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;\frac{e^{x}-e^{-x}}{e^{x}&plus;e^{-x}}">
@@ -133,6 +145,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/tanh.png"> 
 </p>
+
+* [Source Paper : Harrington, Peter de B. "Sigmoid transfer functions in backpropagation neural networks." Analytical Chemistry 65, no. 15 (1993): 2167-2168.](https://pubs.acs.org/doi/pdf/10.1021/ac00063a042)
 
 22. Tanh Shrink:
 
@@ -150,6 +164,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/LeCunTanh.png"> 
 </p>
 
+* [Source Paper : LeCun, Yann A., Léon Bottou, Genevieve B. Orr, and Klaus-Robert Müller. "Efficient backprop." In Neural networks: Tricks of the trade, pp. 9-48. Springer, Berlin, Heidelberg, 2012.](http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf)
+
 24. Hard Tanh:
 
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}-1&space;&&space;x&space;<&space;-1\\x&space;&&space;-1&space;\leq&space;x&space;\leq&space;1\\1&space;&&space;x&space;>&space;1&space;\end{cases}">
@@ -165,6 +181,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/TanhExp.png"> 
 </p>
+
+* [Source Paper : Liu, Xinyu, and Xiaoguang Di. "TanhExp: A smooth activation function with high convergence speed for lightweight neural networks." IET Computer Vision 15, no. 2 (2021): 136-150.](https://arxiv.org/abs/2003.09855)
 
 26. ABS:
 
@@ -182,6 +200,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/SquaredReLU.png"> 
 </p>
 
+* [Source Paper : So, David, Wojciech Mańke, Hanxiao Liu, Zihang Dai, Noam Shazeer, and Quoc V. Le. "Searching for Efficient Transformers for Language Modeling." Advances in Neural Information Processing Systems 34 (2021): 6010-6022.](https://arxiv.org/abs/2109.08668)
+
 28. ParametricReLU (PReLU):
 
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}x&space;&&space;x&space;\geq&space;0\\&space;\alpha&space;x&space;&&space;x&space;<&space;0&space;\end{cases}">
@@ -189,6 +209,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/PReLU.png">
 </p>
+
+* [Source Paper : He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. "Delving deep into rectifiers: Surpassing human-level performance on imagenet classification." In Proceedings of the IEEE international conference on computer vision, pp. 1026-1034. 2015.](https://arxiv.org/abs/1502.01852)
 
 29. RandomizedReLU (RReLU):
 
@@ -199,6 +221,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/RReLU.png">   
 </p>
+
+* [Source Paper : Xu, Bing, Naiyan Wang, Tianqi Chen, and Mu Li. "Empirical evaluation of rectified activations in convolutional network." arXiv preprint arXiv:1505.00853 (2015).](https://arxiv.org/abs/1505.00853?context=cs)
 
 30. LeakyReLU:
 
@@ -216,6 +240,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ReLU6.png">  
 </p>
 
+* [Source Paper : Howard, Andrew G., Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, and Hartwig Adam. "Mobilenets: Efficient convolutional neural networks for mobile vision applications." arXiv preprint arXiv:1704.04861 (2017).](https://arxiv.org/abs/1704.04861)
+
 32. ModReLU:
 
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}(|x|&plus;b)\frac{x}{|x|}&space;&&space;|x|&plus;b&space;\geq&space;0&space;\\0&space;&&space;|x|&plus;b&space;\leq&space;0\end{cases}">
@@ -223,6 +249,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ModReLU.png">
 </p>
+
+* [Source Paper : Arjovsky, Martin, Amar Shah, and Yoshua Bengio. "Unitary evolution recurrent neural networks." In International conference on machine learning, pp. 1120-1128. PMLR, 2016.](https://arxiv.org/abs/1511.06464?context=stat)
 
 33. CosReLU:
 
@@ -284,6 +312,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/SoftPlus.png">    
 </p>
 
+* [Source Paper : Dugas, Charles, Yoshua Bengio, François Bélisle, Claude Nadeau, and René Garcia. "Incorporating second-order functional knowledge for better option pricing." Advances in neural information processing systems 13 (2000).](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.966.2210&rep=rep1&type=pdf)
+
 41. Mish:
 
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;x\&space;tanh(SoftPlus(x))">
@@ -291,6 +321,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Mish.png">    
 </p>
+
+* [Source Paper : Misra, Diganta. "Mish: A self regularized non-monotonic neural activation function." arXiv preprint arXiv:1908.08681 4, no. 2 (2019): 10-48550.](https://arxiv.org/abs/1908.08681)
 
 42. Smish:
 
@@ -320,6 +352,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Swish.png">    
 </p>
 
+* [Source Paper : Ramachandran, Prajit, Barret Zoph, and Quoc V. Le. "Searching for activation functions." arXiv preprint arXiv:1710.05941 (2017).](https://arxiv.org/abs/1710.05941?context=cs.LG)
+
 45. ESwish:
 
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;\beta\&space;\frac{x}{1-e^{-\beta&space;x}}">
@@ -327,6 +361,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ESwish.png">    
 </p>
+
+* [Source Paper : Alcaide, Eric. "E-swish: Adjusting activations to different network depths." arXiv preprint arXiv:1801.07145 (2018).](https://arxiv.org/pdf/1801.07145)
 
 46. Hard Swish:
 
@@ -336,6 +372,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/HardSwish.png">    
 </p>
 
+* [Source Paper : Howard, Andrew, Mark Sandler, Grace Chu, Liang-Chieh Chen, Bo Chen, Mingxing Tan, Weijun Wang et al. "Searching for mobilenetv3." In Proceedings of the IEEE/CVF international conference on computer vision, pp. 1314-1324. 2019.](https://ieeexplore.ieee.org/document/9008835)
+
 47. GCU:
 
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;x\&space;cos(x)">
@@ -343,6 +381,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/GCU.png">    
 </p>
+
+* [Source Paper : Noel, Mathew Mithra, Advait Trivedi, and Praneet Dutta. "Growing cosine unit: A novel oscillatory activation function that can speedup training and reduce parameters in convolutional neural networks." arXiv preprint arXiv:2108.12943 (2021).](https://deepai.org/publication/growing-cosine-unit-a-novel-oscillatory-activation-function-that-can-speedup-training-and-reduce-parameters-in-convolutional-neural-networks)
 
 48. CoLU:
 
@@ -352,6 +392,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/CoLU.png">    
 </p>
 
+* [Source Paper : Vagerwal, Advait. "Deeper Learning with CoLU Activation." arXiv preprint arXiv:2112.12078 (2021).](https://arxiv.org/abs/2112.12078)
+
 49. PELU:
 
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}cx&space;&&space;x&space;>&space;0\\&space;\alpha&space;e^{\frac{x}{b}}-1&space;&&space;x&space;\leq&space;0&space;\end{cases}">
@@ -359,6 +401,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/PELU.png">    
 </p>
+
+* [Source Paper : Trottier, Ludovic, Philippe Giguere, and Brahim Chaib-Draa. "Parametric exponential linear unit for deep convolutional neural networks." In 2017 16th IEEE International Conference on Machine Learning and Applications (ICMLA), pp. 207-214. IEEE, 2017.](https://arxiv.org/abs/1605.09332?context=cs)
 
 50. SELU:
 
@@ -368,6 +412,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/SELU.png">    
 </p>
 
+* [Source Paper : Klambauer, Günter, Thomas Unterthiner, Andreas Mayr, and Sepp Hochreiter. "Self-normalizing neural networks." Advances in neural information processing systems 30 (2017).](https://papers.nips.cc/paper/6698-self-normalizing-neural-networks)
+
 51. CELU:
 
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;max(0,x)&plus;min(0,&space;\alpha&space;(exp(\frac{x}{\alpha})−1))">
@@ -375,6 +421,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/CELU.png">    
 </p>
+
+* [Source Paper : Barron, Jonathan T. "Continuously differentiable exponential linear units." arXiv preprint arXiv:1704.07483 (2017).](https://arxiv.org/abs/1704.07483)
 
 52. ArcTan:
 
@@ -392,10 +440,14 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ShiftedSoftPlus.png">    
 </p>
 
+* [Source Paper : Schütt, Kristof, Pieter-Jan Kindermans, Huziel Enoc Sauceda Felix, Stefan Chmiela, Alexandre Tkatchenko, and Klaus-Robert Müller. "Schnet: A continuous-filter convolutional neural network for modeling quantum interactions." Advances in neural information processing systems 30 (2017).](https://dl.acm.org/doi/abs/10.5555/3294771.3294866)
+
 54. Softmax:
 
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;\frac{x_i}{\sum_j&space;x_j}">
-    
+
+* [Source Paper : Gold, Steven, and Anand Rangarajan. "Softmax to softassign: Neural network algorithms for combinatorial optimization." Journal of Artificial Neural Networks 2, no. 4 (1996): 381-399.](https://www.cise.ufl.edu/~anand/pdf/jannsub.pdf)
+
 55. Logit:
 
     <img src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Logit.png">
@@ -428,6 +480,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ELiSH.png">    
 </p>
 
+* [Source Paper : Basirat, Mina, and Peter M. Roth. "The quest for the golden activation function." arXiv preprint arXiv:1808.00783 (2018).](https://arxiv.org/abs/1808.00783)
+
 59. Hard ELiSH:
 
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}x\&space;max(0,min(1,\frac{x&plus;1}{2}))&space;&&space;x&space;\geq&space;0\\&space;(e^x-1)&space;max(0,min(1,\frac{x&plus;1}{2}))&space;&&space;x&space;<&space;0&space;\end{cases}">
@@ -435,6 +489,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/HardELiSH.png">    
 </p>
+
+* [Source Paper : Basirat, Mina, and Peter M. Roth. "The quest for the golden activation function." arXiv preprint arXiv:1808.00783 (2018).](https://arxiv.org/abs/1808.00783)
 
 60. Serf:
 
@@ -444,6 +500,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Serf.png">    
 </p>
 
+* [Source Paper : Nag, Sayan, and Mayukh Bhattacharyya. "SERF: Towards better training of deep neural networks using log-Softplus ERror activation Function." arXiv preprint arXiv:2108.09598 (2021).](https://arxiv.org/abs/2108.09598?context=cs)
+
 61. ELU:
 
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}x&space;&&space;x&space;>&space;0\\&space;\alpha&space;(exp(x)-1)&space;&&space;x&space;\leq&space;0&space;\end{cases}">
@@ -451,6 +509,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ELU.png">    
 </p>
+
+* [Source Paper : Clevert, Djork-Arné, Thomas Unterthiner, and Sepp Hochreiter. "Fast and accurate deep network learning by exponential linear units (elus)." arXiv preprint arXiv:1511.07289 (2015).](https://dblp.org/rec/journals/corr/ClevertUH15)
 
 62. Phish:
 
@@ -460,6 +520,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Phish.png">    
 </p>
 
+* [Source Paper : Naveen, Philip. "Phish: A novel hyper-optimizable activation function." (2022).](https://www.techrxiv.org/articles/preprint/Phish_A_Novel_Hyper-Optimizable_Activation_Function/17283824/2)
+
 63. QReLU:
 
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}x&space;&&space;x&space;>&space;0\\&space;0.01\&space;x(x-2)&space;&&space;x&space;\leq&space;0&space;\end{cases}">
@@ -467,6 +529,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/QReLU.png">    
 </p>
+
+* [Source Paper : Parisi, Luca, Daniel Neagu, Renfei Ma, and Felician Campean. "QReLU and m-QReLU: Two novel quantum activation functions to aid medical diagnostics." arXiv preprint arXiv:2010.08031 (2020).](https://arxiv.org/abs/2010.08031)
 
 64. m-QReLU:
 
@@ -476,6 +540,8 @@ As you may know, TensorFlow only has a few defined activation functions and most
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/m-QReLU.png">    
 </p>
 
+* [Source Paper : Parisi, Luca, Daniel Neagu, Renfei Ma, and Felician Campean. "QReLU and m-QReLU: Two novel quantum activation functions to aid medical diagnostics." arXiv preprint arXiv:2010.08031 (2020).](https://arxiv.org/abs/2010.08031)
+
 65. FReLU:
 
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}x&plus;b&space;&&space;x&space;>&space;0\\&space;b&space;&&space;x&space;\leq&space;0&space;\end{cases}">
@@ -483,3 +549,5 @@ As you may know, TensorFlow only has a few defined activation functions and most
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/FReLU.png">    
 </p>
+
+* [Source Paper : Qiu, Suo, Xiangmin Xu, and Bolun Cai. "FReLU: flexible rectified linear units for improving convolutional neural networks." In 2018 24th international conference on pattern recognition (icpr), pp. 1223-1228. IEEE, 2018.](https://arxiv.org/abs/1706.08098)
