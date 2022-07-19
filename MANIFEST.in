@@ -4,3 +4,6 @@ include act_tensor/*.ttf
 include help/*.png
 include help/*.jpg
 include help/*.ttf
+include image/*.png
+include image/*.jpg
+include image/*.ttf
