@@ -4,7 +4,38 @@ from keras import backend
 from keras.backend import *
 from tensorflow.keras import backend as K
 
-def Identity(x):
+def hard_shrink(x, lamd):
+    """
+    Hard Shrinkage (Hardshrink) Activation Function
+    
+    Parameters
+    ----------
+    x : tensor object
+    lamd : int, float
+    
+    Returns
+    -------
+    tensor
+    """
+    x = tf.where((-lamd<=x) & (x<=lamd), x, 0)
+    return x
+
+def relu(x):
+    """
+    Rectified Linear Unit Activation Function
+        
+    Parameters
+    ----------
+    x : tensor object
+        
+    Returns
+    -------
+    tensor
+    """
+    x = tf.where(x>0, x, 0)
+    return x
+
+def identity(x):
     """
     Linear Activation Function f(x)=x
         
@@ -18,7 +49,7 @@ def Identity(x):
     """
     return x
 
-def Step(x):
+def step(x):
     """
     Binary Step Activation Function
         
@@ -30,13 +61,10 @@ def Step(x):
     -------
     tensor
     """
-    dtype = getattr(x, "dtype", floatx())
-    x.numpy()
-    x = np.where(x>0,1,0)
-    x = tf.cast(x, dtype)
+    x = tf.where(x>0,1,0)
     return x
 
-def Sigmoid(x):
+def sigmoid(x):
     """
     Sigmoid Activation Function
         
@@ -50,7 +78,7 @@ def Sigmoid(x):
     """
     return 1/(1 + tf.math.exp(-x))
 
-def HardSigmoid(x):
+def hard_sigmoid(x):
     """
     Hard Sigmoid Activation Function
         
@@ -62,9 +90,9 @@ def HardSigmoid(x):
     -------
     tensor
     """
-    return tf.math.maximum(0, tf.math.minimum(1, (x+1)/2))
+    return tf.math.maximum(0., tf.math.minimum(1., (x + 1.)/2.))
 
-def LogSigmoid(x):
+def log_sigmoid(x):
     """
     LogSigmoid Activation Function
     
@@ -76,9 +104,9 @@ def LogSigmoid(x):
     -------
     tensor
     """
-    return tf.math.log(Sigmoid(x))
+    return tf.math.log(sigmoid(x))
 
-def SiLU(x):
+def silu(x):
     """
     Sigmoid Linear Unit Activation Function
     
@@ -90,16 +118,17 @@ def SiLU(x):
     -------
     tensor
     """
-    return x / (1 - tf.math.exp(-x))
+    return x / (1. - tf.math.exp(-x))
 
-def Linear(x, a):
+def parametric_linear(x, a):
     """
-    Linear Activation Function
+    Linear Activation Function with parameter a
         
     Parameters
     ----------
     x : tensor object
     a : int, float
+        alpha weight for x.
         
     Returns
     -------
@@ -107,7 +136,7 @@ def Linear(x, a):
     """
     return a * x
 
-def PLinear(x, xmin, xmax):
+def piecewise_linear(x, xmin, xmax):
     """
     Piecewise Linear Activation Function
     
@@ -116,26 +145,23 @@ def PLinear(x, xmin, xmax):
     Parameters
     ----------
     x : tensor object
-    xmin : int
+    xmin : int, float
         min range.
-    xmax : int
+    xmax : int, float
         max range.
         
     Returns
     -------
     tensor
     """
-    dtype = getattr(x, "dtype", floatx())
-    x.numpy()
     m = 1./(xmax-xmin)
-    b = 1 - (m * xmax)
-    x = np.where((x >= xmin) & (x <= xmax), np.add(np.multiply(x,m),b),x)
-    x = np.where(x > 1, 1,x)
-    x = np.where(x < 0, 0,x)
-    x = tf.cast(x, dtype)
+    b = 1. - (m * xmax)
+    x = tf.where((x >= xmin) & (x <= xmax), tf.add(tf.multiply(x,m),b),x)
+    x = tf.where(x > 1., 1.,x)
+    x = tf.where(x < 0., 0.,x)
     return x
 
-def Cll(x):
+def cll(x):
     """
     Complementary Log-Log Activation Function
         
@@ -147,9 +173,9 @@ def Cll(x):
     -------
     tensor
     """
-    return 1 - (tf.math.exp(-(tf.math.exp(x))))
+    return 1. - (tf.math.exp(-(tf.math.exp(x))))
 
-def Bipolar(x):
+def bipolar(x):
     """
     Bipolar Activation Function
         
@@ -161,13 +187,10 @@ def Bipolar(x):
     -------
     tensor
     """
-    dtype = getattr(x, "dtype", floatx())
-    x.numpy()
-    x = np.where(x>0,1,-1)
-    x = tf.cast(x, dtype)
+    x = tf.where(x > 0., 1., -1.)
     return x
 
-def BipolarSigmoid(x):
+def bipolar_sigmoid(x):
     """
     Bipolar Sigmoid Activation Function
         
@@ -179,7 +202,7 @@ def BipolarSigmoid(x):
     -------
     tensor
     """
-    return (1-tf.math.exp(-x))/(1+tf.math.exp(-x))
+    return (1. - tf.math.exp(-x))/(1. + tf.math.exp(-x))
 
 def tanh(x):
     """
@@ -193,9 +216,9 @@ def tanh(x):
     -------
     tensor
     """
-    return (2/(1 + tf.math.exp(-2*x))) - 1
+    return (2./(1. + tf.math.exp(-2.*x))) - 1.
 
-def tanhShrink(x):
+def tanhshrink(x):
     """
     TanhShrink Activation Function
     
@@ -209,7 +232,7 @@ def tanhShrink(x):
     """
     return x - tanh(x)
 
-def LeCunTanh(x):
+def leCun_tanh(x):
     """
     LeCun's Tanh Activation Function
     
@@ -225,9 +248,9 @@ def LeCunTanh(x):
     -------
     tensor
     """
-    return (1.7159 * tf.math.tanh((2/3) * x))
+    return (1.7159 * tf.math.tanh((2./3.) * x))
 
-def HardTanh(x):
+def hard_tanh(x):
     """
     Hard Tanh Activation Function
         
@@ -239,9 +262,9 @@ def HardTanh(x):
     -------
     tensor
     """
-    return tf.math.maximum(-1, tf.math.minimum(1, x))
+    return tf.math.maximum(-1., tf.math.minimum(1., x))
 
-def TanhExp(x):
+def tanh_exp(x):
     """
     Tanh Exponential Activation Function
     
@@ -269,25 +292,7 @@ def Abs(x):
     """
     return tf.math.abs(x)
 
-def ReLU(x):
-    """
-    Rectified Linear Unit Activation Function
-        
-    Parameters
-    ----------
-    x : tensor object
-        
-    Returns
-    -------
-    tensor
-    """
-    dtype = getattr(x, 'dtype', floatx())
-    x.numpy()
-    x = np.where(x>0, x, 0)
-    x = tf.cast(x, dtype)
-    return x
-
-def SquaredReLU(x):
+def squared_relu(x):
     """
     Squared Rectified Linear Unit Activation Function
         
@@ -299,13 +304,10 @@ def SquaredReLU(x):
     -------
     tensor
     """
-    dtype = getattr(x, 'dtype', floatx())
-    x.numpy()
-    x = np.where(x>0, x**2, 0)
-    x = tf.cast(x, dtype)
+    x = tf.where(x > 0., tf.math.pow(x, 2.), 0.)
     return x
 
-def PReLU(x, alpha):
+def Parametric_ReLU(x, alpha):
     """
     Parametric Rectified Linear Unit Activation Function
     
@@ -318,34 +320,32 @@ def PReLU(x, alpha):
     -------
     tensor
     """
-    dtype = getattr(x, 'dtype', floatx())
-    x.numpy()
-    x = np.where(x>0, x, alpha*x)
-    x = tf.cast(x, dtype)
+    x = tf.where(x>0., x, alpha*x)
     return x
 
-def RReLU(x, lower, upper):
+def Randomized_ReLU(x, lower, upper):
     """
     Randomized Leaky Rectified Linear Unit Activation Function
     
     Parameters
     ----------
     x : tensor object
+    lower : int, float
+        lower range for random.uniform.
+    upper : int, float
+        upper range for random.uniform.
         
     Returns
     -------
     tensor
     """
-    dtype = getattr(x, 'dtype', floatx())
-    x.numpy()
     a = np.random.uniform(lower, upper, 1)
-    x = np.where(x>=0, x, a*x)
-    x = tf.cast(x, dtype)
+    x = tf.where(x>=0., x, a*x)
     return x
 
-def LeakyReLU(x):
+def leaky_ReLU(x):
     """
-    Parametric Rectified Linear Unit Activation Function
+    Leaky Rectified Linear Unit Activation Function
     
     Parameters
     ----------
@@ -355,15 +355,12 @@ def LeakyReLU(x):
     -------
     tensor
     """
-    dtype = getattr(x, 'dtype', floatx())
-    x.numpy()
-    x = np.where(x>0, x, 0.01*x)
-    x = tf.cast(x, dtype)
+    x = tf.where(x>0., x, 0.01*x)
     return x
 
-def ReLU6(x):
+def relu6(x):
     """
-    Mish Activation Function
+    ReLU6 Activation Function
        
     Parameters
     ----------
@@ -373,11 +370,11 @@ def ReLU6(x):
     -------
     tensor
     """
-    return tf.math.minimum(tf.math.maximum(0, x), 6)
+    return tf.math.minimum(tf.math.maximum(0., x), 6.)
 
-def ModReLU(x, bias):
+def Mod_ReLU(x, bias):
     """
-    Parametric Rectified Linear Unit Activation Function
+    Mod Rectified Linear Unit Activation Function
     
     Parameters
     ----------
@@ -388,17 +385,14 @@ def ModReLU(x, bias):
     -------
     tensor
     """
-    dtype = getattr(x, 'dtype', floatx())
-    x.numpy()
-    x = np.where(np.abs(x)+bias>=0, (np.abs(x)+bias)* (x/np.abs(x)), 0)
-    x = tf.cast(x, dtype)
+    x = tf.where(tf.abs(x)+bias>=0., (tf.abs(x)+bias)* (x/tf.abs(x)), 0.)
     return x
 
-def CosR(x):
+def Cos_ReLU(x):
     """
-    Modification for ReLU Activation Function 
+    Cosine ReLU Activation Function 
     
-    a = σ(z) = max(0, z) + cos(z).
+    a = σ(z) = max(0, z) + cos(z)
         
     Parameters
     ----------
@@ -408,13 +402,13 @@ def CosR(x):
     -------
     tensor
     """
-    return tf.math.maximum(0,x) + tf.math.cos(x)
+    return tf.math.maximum(0.,x) + tf.math.cos(x)
 
-def SinReLU(x):
+def Sin_ReLU(x):
     """
-    Modification for ReLU Activation Function
+    Sin ReLU Activation Function
     
-    a = σ(z) = max(0, z) + sin(z).
+    a = σ(z) = max(0, z) + sin(z)
         
     Parameters
     ----------
@@ -424,9 +418,9 @@ def SinReLU(x):
     -------
     tensor
     """
-    return tf.math.maximum(0,x) + tf.math.sin(x)
+    return tf.math.maximum(0.,x) + tf.math.sin(x)
 
-def Probit(x):
+def probit(x):
     """
     Probit Activation Function also known as Cumulative distribution function (CDF)
         
@@ -454,7 +448,7 @@ def Cosine(x):
     """
     return tf.math.cos(x)
 
-def Gaussian(x):
+def gaussian(x):
     """
     Gaussian Activation Function
     
@@ -466,18 +460,18 @@ def Gaussian(x):
     -------
     tensor
     """
-    return tf.math.exp(tf.math.multiply(-0.5, tf.math.pow(x, 2)))
+    return tf.math.exp(tf.math.multiply(-0.5, tf.math.pow(x, 2.)))
 
-def Multiquadratic(x, px, py):
+def Multi_quadratic(x, px, py):
     """
     Multiquadratic Activation Function
     
     Parameters
     ----------
     x : tensor object
-    px: float
+    px: int, float
         x dimension of chosen point
-    py: float
+    py: int, float
         y dimension of chosen point
         
     Returns
@@ -486,11 +480,11 @@ def Multiquadratic(x, px, py):
     
     notes
     -----
-    px and py must be float or this will not work.
+    px and py must be float otherwise it will get an error.
     """
-    return tf.math.sqrt(tf.math.add(tf.math.pow(tf.math.subtract(x,px ),2), tf.math.pow(py, 2)))
+    return tf.math.sqrt(tf.math.add(tf.math.pow(tf.math.subtract(x,px ),2.), tf.math.pow(py, 2.)))
 
-def InvMultiquadratic(x, px, py):
+def Inv_Multi_quadratic(x, px, py):
     """
     Inverse Multiquadratic Activation Function
     
@@ -508,11 +502,27 @@ def InvMultiquadratic(x, px, py):
     
     notes
     -----
-    px and py must be float or this will not work.
+    px and py must be float otherwise it will get an error.
     """
-    return 1./(tf.math.sqrt(tf.math.add(tf.math.pow(tf.math.subtract(x,px ),2), tf.math.pow(py, 2))))
+    return 1./(tf.math.sqrt(tf.math.add(tf.math.pow(tf.math.subtract(x,px ),2.), tf.math.pow(py, 2.))))
 
-def Mish(x):
+def softPlus(x):
+    """
+    Softplus or Smooth ReLU Activation Function
+    
+    Output Range : (0, infinity)
+    
+    Parameters
+    ----------
+    x : tensor object
+    
+    Returns
+    -------
+    tensor
+    """
+    return tf.math.log(1. + tf.math.exp(x))
+
+def mish(x):
     """
     Mish Activation Function
     
@@ -524,9 +534,9 @@ def Mish(x):
     -------
     tensor
     """
-    return x * tanh(SoftPlus(x))
+    return x * tanh(softPlus(x))
 
-def Smish(x):
+def smish(x):
     """
     Smish Activation Function
     
@@ -538,29 +548,33 @@ def Smish(x):
     -------
     tensor
     """
-    return tf.math.multiply(x, tf.math.tanh(tf.math.log(tf.math.add(1., Sigmoid(x)))))
+    return tf.math.multiply(x, tf.math.tanh(tf.math.log(tf.math.add(1., sigmoid(x)))))
 
-def PSmish(x, alpha = 1., beta = 1.):
+def Parametric_Smish(x, alpha = 1., beta = 1.):
     """
     Parametric Smish Activation Function
     
     Parameters
     ----------
     x : tensor object
-    alpha : float, default 1.
+    alpha : float, default=1.
             alpha weight.
-    alpha : float, default 1.
+    beta : float, default=1.
             beta weight.
         
     Returns
     -------
     tensor
+    
+    notes
+    -----
+    alpha and beta must be float otherwise it will get an error.
     """
     a = tf.math.multiply(alpha, x)
     b = tf.math.multiply(beta, x)
-    return tf.math.multiply(a, tf.math.tanh(tf.math.log(tf.math.add(1., Sigmoid(b)))))
+    return tf.math.multiply(a, tf.math.tanh(tf.math.log(tf.math.add(1., sigmoid(b)))))
 
-def Swish(x, beta):
+def swish(x, beta):
     """
     Swish Activation Function
     
@@ -573,9 +587,9 @@ def Swish(x, beta):
     -------
     tensor
     """
-    return x / (1 - tf.math.exp(-beta*x))
+    return x / (1. - tf.math.exp(-beta*x))
 
-def ESwish(x, beta):
+def eswish(x, beta):
     """
     E-Swish Activation Function
     
@@ -588,9 +602,9 @@ def ESwish(x, beta):
     -------
     tensor
     """
-    return beta * (x / (1 - tf.math.exp(-beta*x)))
+    return beta * (x / (1. - tf.math.exp(-beta*x)))
 
-def HardSwish(x):
+def hardSwish(x):
     """
     Hard Swish Activation Function
     
@@ -602,9 +616,9 @@ def HardSwish(x):
     -------
     tensor
     """
-    return x * (ReLU6(x+3) / 6)
+    return x * (relu6(x+3) / 6)
 
-def GCU(x):
+def gcu(x):
     """
     Growing Cosine Unit Activation Function
     
@@ -618,7 +632,7 @@ def GCU(x):
     """
     return tf.math.multiply(x, tf.math.cos(x))
 
-def CoLU(x):
+def colu(x):
     """
     Collapsing Linear Unit Activation Function
     
@@ -630,32 +644,27 @@ def CoLU(x):
     -------
     tensor
     """
-    b = tf.math.multiply(-1.,(tf.math.add(x, tf.math.exp(x))))
-    a = tf.math.pow(x,b)
-    return tf.math.divide(x,tf.math.subtract(1., a))
+    return  x / (1. - x*(tf.math.exp(-x-tf.math.exp(x))))
 
-def SOFTSHRINK(x, alpha):
+def softSHRINK(x, lambd):
     """
     SOFTSHRINK Activation Function
     
     Parameters
     ----------
     x : tensor object
-    alpha : int, float
+    lambd : int, float
         
     Returns
     -------
     tensor
     """
-    dtype = getattr(x, "dtype", floatx())
-    x.numpy()
-    x = np.where((x > (-alpha)) & (x < alpha),0,x)
-    x = np.where(x >= alpha, x - alpha, x)
-    x = np.where(x <= (-alpha), x + alpha, x)
-    x = tf.cast(x, dtype)
+    x = tf.where((x > (-lambd)) & (x < lambd),0.,x)
+    x = tf.where(x >= lambd, x - lambd, x)
+    x = tf.where(x <= (-lambd), x + lambd, x)
     return x
 
-def PELU(x, c, b, alpha):
+def pelu(x, c, b, alpha):
     """
     Parametric Exponential Linear Unit Activation Function
     
@@ -670,13 +679,10 @@ def PELU(x, c, b, alpha):
     -------
     tensor
     """
-    dtype = getattr(x, 'dtype', floatx())
-    x.numpy()
-    x = np.where(x>0, c*x, alpha*(np.exp(x/b)-1))
-    x = tf.cast(x, dtype)
+    x = tf.where(x>0., c*x, alpha*(tf.math.exp(x/b)-1.))
     return x
 
-def SELU(x):
+def selu(x):
     """
     SELU Activation Function
     
@@ -690,11 +696,11 @@ def SELU(x):
     """
     scale = 1.0507009873554804934193349852946
     alpha = 1.6732632423543772848170429916717
-    return scale * (tf.math.maximum(0,x) + tf.math.minimum(0,alpha*(tf.math.exp(x)-1)))
+    return scale * (tf.math.maximum(0.,x) + tf.math.minimum(0.,alpha*(tf.math.exp(x)-1.)))
 
-def CELU(x, alpha=1.0):
+def celu(x, alpha=1.0):
     """
-    SELU Activation Function
+    CELU Activation Function
     
     Parameters
     ----------
@@ -705,9 +711,9 @@ def CELU(x, alpha=1.0):
     -------
     tensor
     """
-    return tf.math.maximum(0,x) + tf.math.minimum(0,alpha*(tf.math.exp(x/alpha)-1))
+    return tf.math.maximum(0.,x) + tf.math.minimum(0.,alpha*(tf.math.exp(x/alpha)-1.))
 
-def ArcTan(x):
+def arcTan(x):
     """
     ArcTang Activation Function
         
@@ -721,23 +727,7 @@ def ArcTan(x):
     """
     return tf.math.atan(x)
 
-def SoftPlus(x):
-    """
-    Softplus or Smooth ReLU Activation Function
-    
-    Output Range : (0, infinity)
-    
-    Parameters
-    ----------
-    x : tensor object
-    
-    Returns
-    -------
-    tensor
-    """
-    return tf.math.log(1 + tf.math.exp(x))
-
-def ShiftedSoftPlus(x):
+def Shifted_SoftPlus(x):
     """
     Shifted Softplus Activation Function
         
@@ -751,7 +741,7 @@ def ShiftedSoftPlus(x):
     """
     return tf.math.log(0.5 + 0.5*tf.math.exp(x))
 
-def Softmax(x):
+def softmax(x):
     """
     Softmax Activation Function
         
@@ -765,7 +755,7 @@ def Softmax(x):
     """
     return tf.keras.activations.softmax(x, axis=-1)
 
-def Logit(x):
+def logit(x):
     """
     Logit Activation Function
     
@@ -777,9 +767,9 @@ def Logit(x):
     -------
     tensor
     """
-    return x / (1-x)
+    return x / (1.-x)
 
-def GELU(x):
+def gelu(x):
     """
     Gaussian Error Linear Unit Activation Function
     
@@ -793,7 +783,7 @@ def GELU(x):
     """
     return tf.keras.activations.gelu(x)
 
-def Softsign(x):
+def softsign(x):
     """
     Softsign Activation Function
     
@@ -805,9 +795,9 @@ def Softsign(x):
     -------
     tensor
     """
-    return x / (tf.math.abs(x) + 1)
+    return x / (tf.math.abs(x) + 1.)
 
-def ELiSH(x):
+def elish(x):
     """
     Exponential Linear Squashing Activation Function
     
@@ -819,13 +809,10 @@ def ELiSH(x):
     -------
     tensor
     """
-    dtype = getattr(x, 'dtype', floatx())
-    x.numpy()
-    x = np.where(x>=0, x/(1+tf.math.exp(-x)), ((tf.math.exp(x)-1)/(1+tf.math.exp(-x))))
-    x = tf.cast(x, dtype)
+    x = tf.where(x>=0., x/(1.+tf.math.exp(-x)), ((tf.math.exp(x)-1.)/(1.+tf.math.exp(-x))))
     return x
 
-def HardELiSH(x):
+def hardELiSH(x):
     """
     Hard Exponential Linear Squashing Activation Function
     
@@ -837,13 +824,10 @@ def HardELiSH(x):
     -------
     tensor
     """
-    dtype = getattr(x, 'dtype', floatx())
-    x.numpy()
-    x = np.where(x>=0, x*tf.math.maximum(0, tf.math.minimum(1, (x+1)/2)), (tf.math.exp(x)-1)*tf.math.maximum(0, tf.math.minimum(1, (x+1)/2)))
-    x = tf.cast(x, dtype)
+    x = tf.where(x>=0., x*tf.math.maximum(0., tf.math.minimum(1., (x+1.)/2.)), (tf.math.exp(x)-1.)*tf.math.maximum(0., tf.math.minimum(1., (x+1.)/2.)))
     return x
 
-def Serf(x):
+def serf(x):
     """
     Log-Softplus Error Activation Function
     
@@ -855,42 +839,77 @@ def Serf(x):
     -------
     tensor
     """
-    return x * tf.math.erf(tf.math.log(1+tf.math.exp(x)))
+    return x * tf.math.erf(tf.math.log(1.+tf.math.exp(x)))
 
-def HardShrink(x, lamd):
+def elu(x, alpha):
     """
-    Hard Shrinkage (Hardshrink) Activation Function
+    Exponential Linear Unit Activation Function
     
     Parameters
     ----------
     x : tensor object
-    lamd : int, float
+    alpha : int,float
     
     Returns
     -------
     tensor
     """
-    dtype = getattr(x, 'dtype', floatx())
-    x.numpy()
-    x = np.where((-lamd<=x) & (x<=lamd), x, 0)
-    x = tf.cast(x, dtype)
+    x = tf.where(x>0., x, alpha*tf.math.exp(x)-1.)
     return x
 
-def SoftShrink(x, lamd):
+def phish(x):
     """
-    Hard Shrinkage (Hardshrink) Activation Function
+    Phish Activation Function
     
     Parameters
     ----------
     x : tensor object
-    lamd : int, float
     
     Returns
     -------
     tensor
     """
-    dtype = getattr(x, 'dtype', floatx())
-    x.numpy()
-    x = np.where((-lamd<=x) & (x<=lamd), x, 0)
-    x = tf.cast(x, dtype)
-    return x
+    return x * tanh(gelu(x))
+
+def qrelu(x):
+    """
+    Quantum Rectifier Linear Unit Activation Function
+    
+    Parameters
+    ----------
+    x : tensor object
+    
+    Returns
+    -------
+    tensor
+    """
+    return tf.where(x>0.,x,(0.01*(x-2))*x)
+
+def mqrelu(x):
+    """
+    modified QReLU Activation Function
+    
+    Parameters
+    ----------
+    x : tensor object
+    
+    Returns
+    -------
+    tensor
+    """
+    return tf.where(x>0.,x,(0.01*(x)) - x)
+
+def frelu(x, b):
+    """
+    Flexible Rectified Linear Unit (FReLU) Activation Function
+    
+    Parameters
+    ----------
+    x : tensor object
+    b : int, float
+    
+    Returns
+    -------
+    tensor
+    """
+    return tf.where(x>0.,x+b,b)
