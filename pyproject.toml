@@ -2,6 +2,7 @@
 requires = [
     "setuptools>=61",
     "wheel",
-    "numpy"
+    "numpy",
+    "tensorflow"
 ]
 build-backend = "setuptools.build_meta"
