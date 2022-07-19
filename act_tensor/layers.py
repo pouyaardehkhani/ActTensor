@@ -8,7 +8,7 @@ from tensorflow.keras import backend as K
 class SoftShrink(tf.keras.layers.Layer):
     def __init__(self, lamd=1.0, trainable=False, **kwargs):
         """
-        Soft Shrinkage (Softshrink) Activation Function
+        Soft Shrinkage (Softshrink) Activation Layer
         
         Parameters
         ----------
@@ -45,7 +45,7 @@ class SoftShrink(tf.keras.layers.Layer):
 class HardShrink(tf.keras.layers.Layer):
     def __init__(self, lamd=1.0, trainable=False, **kwargs):
         """
-        Hard Shrinkage (Hardshrink) Activation Function
+        Hard Shrinkage (Hardshrink) Activation Layer
         
         Parameters
         ----------
@@ -81,6 +81,9 @@ class HardShrink(tf.keras.layers.Layer):
     
 class GLU(tf.keras.layers.Layer):
     def __init__(self, bias=True, dim=-1, **kwargs):
+        """
+        GLU Activation Layer
+        """
         super(GLU, self).__init__(**kwargs)
         self.bias = bias
         self.dim = dim
@@ -95,6 +98,9 @@ class GLU(tf.keras.layers.Layer):
 
 class Bilinear(tf.keras.layers.Layer):
     def __init__(self, bias=True, dim=-1, **kwargs):
+        """
+        Bilinear Activation Layer
+        """
         super(Bilinear, self).__init__(**kwargs)
         self.bias = bias
         self.dim = dim
@@ -108,6 +114,9 @@ class Bilinear(tf.keras.layers.Layer):
 
 class ReGLU(tf.keras.layers.Layer):
     def __init__(self, bias=True, dim=-1, **kwargs):
+        """
+        ReGLU Activation Layer
+        """
         super(ReGLU, self).__init__(**kwargs)
         self.bias = bias
         self.dim = dim
@@ -122,6 +131,9 @@ class ReGLU(tf.keras.layers.Layer):
 
 class GeGLU(tf.keras.layers.Layer):
     def __init__(self, bias=True, dim=-1, **kwargs):
+        """
+        GeGLU Activation Layer
+        """
         super(GeGLU, self).__init__(**kwargs)
         self.bias = bias
         self.dim = dim
@@ -136,6 +148,9 @@ class GeGLU(tf.keras.layers.Layer):
 
 class SwiGLU(tf.keras.layers.Layer):
     def __init__(self, bias=True, dim=-1, **kwargs):
+        """
+        SwiGLU Activation Layer
+        """
         super(SwiGLU, self).__init__(**kwargs)
         self.bias = bias
         self.dim = dim
@@ -150,6 +165,9 @@ class SwiGLU(tf.keras.layers.Layer):
 
 class SeGLU(tf.keras.layers.Layer):
     def __init__(self, bias=True, dim=-1, **kwargs):
+        """
+        SeGLU Activation Layer
+        """
         super(SeGLU, self).__init__(**kwargs)
         self.bias = bias
         self.dim = dim
@@ -164,7 +182,7 @@ class SeGLU(tf.keras.layers.Layer):
 class ReLU(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Rectified Linear Unit Activation Function
+        Rectified Linear Unit Activation Layer
         """
         super(ReLU, self).__init__(**kwargs)
         self.supports_masking = True
@@ -181,7 +199,7 @@ class ReLU(tf.keras.layers.Layer):
 class Identity(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Linear Activation Function f(x)=x
+        Linear Activation Layer f(x)=x
         """
         super(Identity, self).__init__(**kwargs)
         self.supports_masking = True
@@ -198,7 +216,7 @@ class Identity(tf.keras.layers.Layer):
 class Step(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Binary Step Activation Function
+        Binary Step Activation Layer
         """
         super(Step, self).__init__(**kwargs)
         self.supports_masking = True
@@ -215,7 +233,7 @@ class Step(tf.keras.layers.Layer):
 class Sigmoid(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Sigmoid Activation Function
+        Sigmoid Activation Layer
         """
         super(Sigmoid, self).__init__(**kwargs)
         self.supports_masking = True
@@ -232,7 +250,7 @@ class Sigmoid(tf.keras.layers.Layer):
 class HardSigmoid(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Hard Sigmoid Activation Function
+        Hard Sigmoid Activation Layer
         """
         super(HardSigmoid, self).__init__(**kwargs)
         self.supports_masking = True
@@ -249,7 +267,7 @@ class HardSigmoid(tf.keras.layers.Layer):
 class LogSigmoid(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        LogSigmoid Activation Function
+        LogSigmoid Activation Layer
         """
         super(LogSigmoid, self).__init__(**kwargs)
         self.supports_masking = True
@@ -266,7 +284,7 @@ class LogSigmoid(tf.keras.layers.Layer):
 class SiLU(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Sigmoid Linear Unit Activation Function
+        Sigmoid Linear Unit Activation Layer
         """
         super(SiLU, self).__init__(**kwargs)
         self.supports_masking = True
@@ -283,7 +301,7 @@ class SiLU(tf.keras.layers.Layer):
 class ParametricLinear(tf.keras.layers.Layer):
     def __init__(self, alpha=1., **kwargs):
         """
-        Linear Activation Function with parameter a
+        Linear Activation Layer with parameter alpha
         
         Parameters
         ----------
@@ -305,7 +323,7 @@ class ParametricLinear(tf.keras.layers.Layer):
 class PiecewiseLinear(tf.keras.layers.Layer):
     def __init__(self, xmin, xmax, **kwargs):
         """
-        Piecewise Linear Activation Function
+        Piecewise Linear Activation Layer
         
         Parameters
         ----------
@@ -331,7 +349,7 @@ class PiecewiseLinear(tf.keras.layers.Layer):
 class CLL(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Complementary Log-Log Activation Function
+        Complementary Log-Log Activation Layer
         """
         super(CLL, self).__init__(**kwargs)
         self.supports_masking = True
@@ -348,7 +366,7 @@ class CLL(tf.keras.layers.Layer):
 class Bipolar(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Bipolar Activation Function
+        Bipolar Activation Layer
         """
         super(Bipolar, self).__init__(**kwargs)
         self.supports_masking = True
@@ -365,7 +383,7 @@ class Bipolar(tf.keras.layers.Layer):
 class BipolarSigmoid(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Bipolar Sigmoid Activation Function
+        Bipolar Sigmoid Activation Layer
         """
         super(BipolarSigmoid, self).__init__(**kwargs)
         self.supports_masking = True
@@ -382,7 +400,7 @@ class BipolarSigmoid(tf.keras.layers.Layer):
 class Tanh(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Hyperbolic Tangent Activation Function
+        Hyperbolic Tangent Activation Layer
         """
         super(Tanh, self).__init__(**kwargs)
         self.supports_masking = True
@@ -399,7 +417,7 @@ class Tanh(tf.keras.layers.Layer):
 class TanhShrink(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        TanhShrink Activation Function
+        TanhShrink Activation Layer
         """
         super(TanhShrink, self).__init__(**kwargs)
         self.supports_masking = True
@@ -416,7 +434,7 @@ class TanhShrink(tf.keras.layers.Layer):
 class LeCunTanh(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        LeCun's Tanh Activation Function
+        LeCun's Tanh Activation Layer
         """
         super(LeCunTanh, self).__init__(**kwargs)
         self.supports_masking = True
@@ -433,7 +451,7 @@ class LeCunTanh(tf.keras.layers.Layer):
 class HardTanh(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Hard Tanh Activation Function
+        Hard Tanh Activation Layer
         """
         super(HardTanh, self).__init__(**kwargs)
         self.supports_masking = True
@@ -450,7 +468,7 @@ class HardTanh(tf.keras.layers.Layer):
 class TanhExp(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Tanh Exponential Activation Function
+        Tanh Exponential Activation Layer
         """
         super(TanhExp, self).__init__(**kwargs)
         self.supports_masking = True
@@ -467,7 +485,7 @@ class TanhExp(tf.keras.layers.Layer):
 class ABS(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Absolute Activation Function
+        Absolute Activation Layer
         """
         super(ABS, self).__init__(**kwargs)
         self.supports_masking = True
@@ -484,7 +502,7 @@ class ABS(tf.keras.layers.Layer):
 class SquaredReLU(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Squared Rectified Linear Unit Activation Function
+        Squared Rectified Linear Unit Activation Layer
         """
         super(SquaredReLU, self).__init__(**kwargs)
         self.supports_masking = True
@@ -501,7 +519,7 @@ class SquaredReLU(tf.keras.layers.Layer):
 class ParametricReLU(tf.keras.layers.Layer):
     def __init__(self, alpha=0.001, **kwargs):
         """
-        Parametric Rectified Linear Unit Activation Function
+        Parametric Rectified Linear Unit Activation Layer
         
         Parameters
         ----------
@@ -523,7 +541,7 @@ class ParametricReLU(tf.keras.layers.Layer):
 class RandomizedReLU(tf.keras.layers.Layer):
     def __init__(self, lower=0., upper=1., **kwargs):
         """
-        Randomized Leaky Rectified Linear Unit Activation Function
+        Randomized Leaky Rectified Linear Unit Activation Layer
         
         Parameters
         ----------
@@ -549,7 +567,7 @@ class RandomizedReLU(tf.keras.layers.Layer):
 class LeakyReLU(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Leaky Rectified Linear Unit Activation Function
+        Leaky Rectified Linear Unit Activation Layer
         """
         super(LeakyReLU, self).__init__(**kwargs)
         self.supports_masking = True
@@ -566,7 +584,7 @@ class LeakyReLU(tf.keras.layers.Layer):
 class ReLU6(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        ReLU6 Activation Function
+        ReLU6 Activation Layer
         """
         super(ReLU6, self).__init__(**kwargs)
         self.supports_masking = True
@@ -583,7 +601,7 @@ class ReLU6(tf.keras.layers.Layer):
 class ModReLU(tf.keras.layers.Layer):
     def __init__(self, bias, **kwargs):
         """
-        Mod Rectified Linear Unit Activation Function
+        Mod Rectified Linear Unit Activation Layer
         
         Parameters
         ----------
@@ -605,7 +623,7 @@ class ModReLU(tf.keras.layers.Layer):
 class CosReLU(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Cosine ReLU Activation Function 
+        Cosine ReLU Activation Layer
         
         a = σ(z) = max(0, z) + cos(z)
         """
@@ -624,7 +642,7 @@ class CosReLU(tf.keras.layers.Layer):
 class SinReLU(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Sin ReLU Activation Function
+        Sin ReLU Activation Layer
         
         a = σ(z) = max(0, z) + sin(z)
         """
@@ -643,7 +661,7 @@ class SinReLU(tf.keras.layers.Layer):
 class Probit(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Probit Activation Function also known as Cumulative distribution function (CDF)
+        Probit Activation Layer also known as Cumulative distribution function (CDF)
         """
         super(Probit, self).__init__(**kwargs)
         self.supports_masking = True
@@ -660,7 +678,7 @@ class Probit(tf.keras.layers.Layer):
 class Cos(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Probit Activation Function also known as Cumulative distribution function (CDF)
+        Cos Activation Layer
         """
         super(Cos, self).__init__(**kwargs)
         self.supports_masking = True
@@ -677,7 +695,7 @@ class Cos(tf.keras.layers.Layer):
 class Gaussian(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Gaussian Activation Function
+        Gaussian Activation Layer
         """
         super(Gaussian, self).__init__(**kwargs)
         self.supports_masking = True
@@ -694,7 +712,7 @@ class Gaussian(tf.keras.layers.Layer):
 class Multiquadratic(tf.keras.layers.Layer):
     def __init__(self, px, py, **kwargs):
         """
-        Multiquadratic Activation Function
+        Multiquadratic Activation Layer
         
         Parameters
         ----------
@@ -724,7 +742,7 @@ class Multiquadratic(tf.keras.layers.Layer):
 class InvMultiquadratic(tf.keras.layers.Layer):
     def __init__(self, px, py, **kwargs):
         """
-        Inverse Multiquadratic Activation Function
+        Inverse Multiquadratic Activation Layer
         
         Parameters
         ----------
@@ -754,7 +772,7 @@ class InvMultiquadratic(tf.keras.layers.Layer):
 class SoftPlus(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Softplus or Smooth ReLU Activation Function
+        Softplus or Smooth ReLU Activation Layer
         """
         super(SoftPlus, self).__init__(**kwargs)
         self.supports_masking = True
@@ -771,7 +789,7 @@ class SoftPlus(tf.keras.layers.Layer):
 class Mish(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Mish Activation Function
+        Mish Activation Layer
         """
         super(Mish, self).__init__(**kwargs)
         self.supports_masking = True
@@ -788,7 +806,7 @@ class Mish(tf.keras.layers.Layer):
 class Smish(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Mish Activation Function
+        Mish Activation Layer
         """
         super(Smish, self).__init__(**kwargs)
         self.supports_masking = True
@@ -805,7 +823,7 @@ class Smish(tf.keras.layers.Layer):
 class ParametricSmish(tf.keras.layers.Layer):
     def __init__(self, alpha = 1., beta = 1., **kwargs):
         """
-        Parametric Smish Activation Function
+        Parametric Smish Activation Layer
         
         Parameters
         ----------
@@ -835,7 +853,7 @@ class ParametricSmish(tf.keras.layers.Layer):
 class Swish(tf.keras.layers.Layer):
     def __init__(self, beta = 1., **kwargs):
         """
-        Swish Activation Function
+        Swish Activation Layer
         
         Parameters
         ----------
@@ -857,7 +875,7 @@ class Swish(tf.keras.layers.Layer):
 class ESwish(tf.keras.layers.Layer):
     def __init__(self, beta = 1., **kwargs):
         """
-        E-Swish Activation Function
+        E-Swish Activation Layer
         
         Parameters
         ----------
@@ -879,7 +897,7 @@ class ESwish(tf.keras.layers.Layer):
 class HardSwish(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Hard Swish Activation Function
+        Hard Swish Activation Layer
         """
         super(HardSwish, self).__init__(**kwargs)
         self.supports_masking = True
@@ -896,7 +914,7 @@ class HardSwish(tf.keras.layers.Layer):
 class GCU(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Growing Cosine Unit Activation Function
+        Growing Cosine Unit Activation Layer
         """
         super(GCU, self).__init__(**kwargs)
         self.supports_masking = True
@@ -913,7 +931,7 @@ class GCU(tf.keras.layers.Layer):
 class CoLU(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Collapsing Linear Unit Activation Function
+        Collapsing Linear Unit Activation Layer
         """
         super(CoLU, self).__init__(**kwargs)
         self.supports_masking = True
@@ -930,7 +948,7 @@ class CoLU(tf.keras.layers.Layer):
 class PELU(tf.keras.layers.Layer):
     def __init__(self, c, b, alpha, **kwargs):
         """
-        Parametric Exponential Linear Unit Activation Function
+        Parametric Exponential Linear Unit Activation Layer
         
         Parameters
         ----------
@@ -956,7 +974,7 @@ class PELU(tf.keras.layers.Layer):
 class SELU(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        SELU Activation Function
+        SELU Activation Layer
         """
         super(SELU, self).__init__(**kwargs)
         self.supports_masking = True
@@ -973,7 +991,7 @@ class SELU(tf.keras.layers.Layer):
 class CELU(tf.keras.layers.Layer):
     def __init__(self, alpha=1.0, **kwargs):
         """
-        CELU Activation Function
+        CELU Activation Layer
         
         Parameters
         ----------
@@ -995,7 +1013,7 @@ class CELU(tf.keras.layers.Layer):
 class ArcTan(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        ArcTang Activation Function
+        ArcTang Activation Layer
         """
         super(ArcTan, self).__init__(**kwargs)
         self.supports_masking = True
@@ -1012,7 +1030,7 @@ class ArcTan(tf.keras.layers.Layer):
 class ShiftedSoftPlus(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Shifted Softplus Activation Function
+        Shifted Softplus Activation Layer
         """
         super(ShiftedSoftPlus, self).__init__(**kwargs)
         self.supports_masking = True
@@ -1029,7 +1047,7 @@ class ShiftedSoftPlus(tf.keras.layers.Layer):
 class Softmax(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Softmax Activation Function
+        Softmax Activation Layer
         """
         super(Softmax, self).__init__(**kwargs)
         self.supports_masking = True
@@ -1046,7 +1064,7 @@ class Softmax(tf.keras.layers.Layer):
 class Logit(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Logit Activation Function
+        Logit Activation Layer
         """
         super(Logit, self).__init__(**kwargs)
         self.supports_masking = True
@@ -1063,7 +1081,7 @@ class Logit(tf.keras.layers.Layer):
 class GELU(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Gaussian Error Linear Unit Activation Function
+        Gaussian Error Linear Unit Activation Layer
         """
         super(GELU, self).__init__(**kwargs)
         self.supports_masking = True
@@ -1080,7 +1098,7 @@ class GELU(tf.keras.layers.Layer):
 class Softsign(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Softsign Activation Function
+        Softsign Activation Layer
         """
         super(Softsign, self).__init__(**kwargs)
         self.supports_masking = True
@@ -1097,7 +1115,7 @@ class Softsign(tf.keras.layers.Layer):
 class ELiSH(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Exponential Linear Squashing Activation Function
+        Exponential Linear Squashing Activation Layer
         """
         super(ELiSH, self).__init__(**kwargs)
         self.supports_masking = True
@@ -1114,7 +1132,7 @@ class ELiSH(tf.keras.layers.Layer):
 class HardELiSH(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Hard Exponential Linear Squashing Activation Function
+        Hard Exponential Linear Squashing Activation Layer
         """
         super(HardELiSH, self).__init__(**kwargs)
         self.supports_masking = True
@@ -1131,7 +1149,7 @@ class HardELiSH(tf.keras.layers.Layer):
 class Serf(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Log-Softplus Error Activation Function
+        Log-Softplus Error Activation Layer
         """
         super(Serf, self).__init__(**kwargs)
         self.supports_masking = True
@@ -1148,7 +1166,7 @@ class Serf(tf.keras.layers.Layer):
 class ELU(tf.keras.layers.Layer):
     def __init__(self, alpha, **kwargs):
         """
-        Exponential Linear Unit Activation Function
+        Exponential Linear Unit Activation Layer
         
         Parameters
         ----------
@@ -1170,7 +1188,7 @@ class ELU(tf.keras.layers.Layer):
 class Phish(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Phish Activation Function
+        Phish Activation Layer
         """
         super(Phish, self).__init__(**kwargs)
         self.supports_masking = True
@@ -1187,7 +1205,7 @@ class Phish(tf.keras.layers.Layer):
 class QReLU(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        Quantum Rectifier Linear Unit Activation Function
+        Quantum Rectifier Linear Unit Activation Layer
         """
         super(QReLU, self).__init__(**kwargs)
         self.supports_masking = True
@@ -1204,7 +1222,7 @@ class QReLU(tf.keras.layers.Layer):
 class MQReLU(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         """
-        modified QReLU Activation Function
+        modified QReLU Activation Layer
         """
         super(MQReLU, self).__init__(**kwargs)
         self.supports_masking = True
@@ -1221,7 +1239,7 @@ class MQReLU(tf.keras.layers.Layer):
 class FReLU(tf.keras.layers.Layer):
     def __init__(self, b, **kwargs):
         """
-        Flexible Rectified Linear Unit Activation Function
+        Flexible Rectified Linear Unit Activation Layer
         
         Parameters
         ----------

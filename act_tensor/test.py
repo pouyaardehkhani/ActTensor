@@ -1,7 +1,7 @@
-from act_tensor.functions import *
-from act_tensor.layers import *
 import tensorflow as tf
 import numpy as np
+from act_tensor.functions import *
+from act_tensor.layers import *
 
 # functional api with classes
 
@@ -17,7 +17,7 @@ x = tf.keras.layers.Flatten()(inputs)
 x = tf.keras.layers.Dense(128)(x)
 # wanted class name
 x = ReLU()(x)
-output = tf.keras.layers.Dense(10)(x)
+output = tf.keras.layers.Dense(10,activation='softmax')(x)
 
 model = tf.keras.models.Model(inputs = inputs,outputs=output)
 
