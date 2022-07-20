@@ -20,6 +20,7 @@ As you may know, TensorFlow only has a few defined activation functions and most
     numpy
     tensorflow
     setuptools
+    keras
     wheel
     
 ## Where to get it?
