@@ -1,7 +1,6 @@
 import tensorflow as tf
 import numpy as np
-from act_tensor.functions import *
-from act_tensor.layers import *
+from ActTensor_tf import ReLU
 
 # functional api with classes
 
