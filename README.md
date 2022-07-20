@@ -744,3 +744,17 @@ Functions are available in ***act_tensor.functions***
 </p>
 
 * [Source Paper : Qiu, Suo, Xiangmin Xu, and Bolun Cai. "FReLU: flexible rectified linear units for improving convolutional neural networks." In 2018 24th international conference on pattern recognition (icpr), pp. 1223-1228. IEEE, 2018.](https://arxiv.org/abs/1706.08098)
+
+## Cite this repository
+
+```sh
+@software{Pouya_ActTensor_2022,
+author = {Pouya, Ardehkhani and Pegah, Ardehkhani},
+license = {MIT},
+month = {7},
+title = {{ActTensor}},
+url = {https://github.com/pouyaardehkhani/ActTensor},
+version = {1.0.0},
+year = {2022}
+}
+```
