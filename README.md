@@ -2,7 +2,9 @@
   <img src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ActTensor%20logo.png"><br>
 </div>
 
-# **ActTensor**
+---------
+
+# **ActTensor**: Activation Functions for TensorFlow
 
 ## **What is it?**
 
@@ -10,6 +12,143 @@ ActTensor is a Python package that provides state-of-the-art activation function
 
 ## **Why not using tf.keras.activations?**
 As you may know, TensorFlow only has a few defined activation functions and most importantly it does not include newly-introduced activation functions. Wrting another one requires time and energy; however, This package has most of the widely-used, and even state-of-the-art activation functions that are ready to use in your models.
+
+## Requirements
+
+    numpy
+    tensorflow
+    setuptools
+    wheel
+    
+## Where to get it?
+The source code is currently hosted on GitHub at:
+https://github.com/pouyaardehkhani/ActTensor
+
+Binary installers for the latest released version are available at the [Python
+Package Index (PyPI)]()
+
+```sh
+# PyPI
+pip install act-tensor
+```
+
+## License
+[MIT](LICENSE)
+
+## How to use?
+
+```sh
+import tensorflow as tf
+import numpy as np
+from act_tensor.layers import ReLU # name of the layer
+```
+functional api
+
+```sh
+inputs = tf.keras.layers.Input(shape=(28,28))
+x = tf.keras.layers.Flatten()(inputs)
+x = tf.keras.layers.Dense(128)(x)
+# wanted class name
+x = ReLU()(x)
+output = tf.keras.layers.Dense(10,activation='softmax')(x)
+
+model = tf.keras.models.Model(inputs = inputs,outputs=output)
+```
+sequential api 
+```sh
+model = tf.keras.models.Sequential([tf.keras.layers.Flatten(),
+                                    tf.keras.layers.Dense(128),
+                                    # wanted class name
+                                    ReLU(),
+                                    tf.keras.layers.Dense(10, activation = tf.nn.softmax)])
+```
+
+NOTE:
+> The main function of the activation layers are also availabe but it maybe defined as different name. Check [this](https://github.com/pouyaardehkhani/ActTensor/edit/master/README.md#activations) for more information.
+```
+from act_tensor.functions import relu
+```
+
+## Activations
+
+Classes are available in ***act_tensor.layers***
+
+Functions are available in ***act_tensor.functions***
+
+
+| Activation Name | Class Name | Function Name |
+| :---:        |     :---:      |         :---: |
+| SoftShrink   | [SoftShrink](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L8)    | [softSHRINK](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L649)    |
+| HardShrink     | [HardShrink](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L45)     | [hard_shrink](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L7)      |
+| GLU     | [GLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L82)       | -      |
+| Bilinear     | [Bilinear](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L99)       | -      |
+| ReGLU     | [ReGLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L115)       | -      |
+| GeGLU     | [GeGLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L132)       | -      |
+| SwiGLU     | [SwiGLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L149)       | -      |
+| SeGLU     | [SeGLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L166)       | -      |
+| ReLU     | [ReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L182)       | [relu](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L23)      |
+| Identity     | [Identity](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L199)       | [identity](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L38)      |
+| Step     | [Step](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L216)       | [step](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L52)      |
+| Sigmoid     | [Sigmoid](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L233)       | [sigmoid](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L67)     |
+| HardSigmoid     | [HardSigmoid](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L250)       | [hard_sigmoid](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L81)      |
+| LogSigmoid     | [LogSigmoid](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L267)       | [log_sigmoid](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L95)      |
+|  SiLU     | [SiLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L284)       | [silu](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L109)      |
+| PLinear     | [ParametricLinear](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L301)       | [parametric_linear](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L123)      |
+| Piecewise-Linear     | [PiecewiseLinear](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L323)       | [piecewise_linear](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L139)     |
+| Complementary Log-Log     | [CLL](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L349)       | [cll](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L164)      |
+| Bipolar     | [Bipolar](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L366)       | [bipolar](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L178)     |
+| Bipolar-Sigmoid     | [BipolarSigmoid](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L383)       | [bipolar_sigmoid](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L193)      |
+| Tanh     | [Tanh](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L400)       | [tanh](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L207)      |
+| TanhShrink     | [TanhShrink](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L417)       | [tanhshrink](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L221)      |
+| LeCun's Tanh     | [LeCunTanh](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L434)      | [leCun_tanh](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L235)      |
+| HardTanh     | [HardTanh](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L451)       | [hard_tanh](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L253)      |
+| TanhExp     | [TanhExp](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L468)       | [tanh_exp](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L267)      |
+| Absolute     | [ABS](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L485)       | [Abs](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L281)      |
+| Squared-ReLU     | [SquaredReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L502)       | [squared_relu](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L295)      |
+| P-ReLU     | [ParametricReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L519)      | [Parametric_ReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L310)     |
+| R-ReLU     | [RandomizedReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L541)      | [Randomized_ReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L326)      |
+| LeakyReLU     | [LeakyReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L567)       | [leaky_ReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L346)     |
+| ReLU6     | [ReLU6](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L584)       | [relu6](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L361)      |
+| Mod-ReLU     | [ModReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L601)       | [Mod_ReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L375)      |
+| Cosine-ReLU     | [CosReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L623)       | [Cos_ReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L391)      |
+| Sin-ReLU     | [SinReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L642)       | [Sin_ReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L407)      |
+| Probit     | [Probit](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L661)       | [probit](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L423)      |
+| Cos     | [Cos](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L678)      | [Cosine](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L437)      |
+| Gaussian     | [Gaussian](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L695)       | [gaussian](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L451)      |
+| Multiquadratic     | [Multiquadratic](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L712)       | [Multi_quadratic](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L465)      |
+| Inverse-Multiquadratic     | [InvMultiquadratic](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L742)       | [Inv_Multi_quadratic](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L487)      |
+| SoftPlus     | [SoftPlus](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L772)       | [softPlus](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L509)      |
+| Mish     | [Mish](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L789)      | [mish](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L525)      |
+| SMish     | [Smish](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L806)       | [smish](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L539)      |
+| P-SMish     | [ParametricSmish](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L823)       | [Parametric_Smish](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L553)      |
+| Swish     | [Swish](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L853)      | [swish](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L577)      |
+| ESwish     | [ESwish](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L875)      | [eswish](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L592)      |
+| HardSwish     | [HardSwish](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L897)       | [hardSwish](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L607)      |
+| GCU     | [GCU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L914)       | [gcu](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L621)      |
+| CoLU     | [CoLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L931)       | [colu](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L635)      |
+| PELU     | [PELU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L948)       | [pelu](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L667)      |
+| SELU     | [SELU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L974)       | [selu](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L685)      |
+| CELU     | [CELU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L991)       | [celu](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L701)      |
+| ArcTan     | [ArcTan](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L1013)       | [arcTan](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L716)      |
+| Shifted-SoftPlus     | [ShiftedSoftPlus](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L1030)       | [Shifted_SoftPlus](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L730)      |
+| Softmax     | [Softmax](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L1047)       | [softmax](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L744)      |
+| Logit     | [Logit](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L1064)       | [logit](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L758)      |
+| GELU     | [GELU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L1081)       | [gelu](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L772)      |
+| Softsign     | [Softsign](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L1098)       | [softsign](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L786)      |
+| ELiSH     | [ELiSH](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L1115)       | [elish](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L800)      |
+| HardELiSH     | [HardELiSH](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L1132)       | [hardELiSH](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L815)      |
+| Serf     | [Serf](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L1149)       | [serf](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L830)      |
+| ELU     | [ELU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L1166)       | [elu](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L844)      |
+| Phish     | [Phish](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L1188)       | [phish](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L860)      |
+| QReLU     | [QReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L1205)       | [qrelu](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L874)      |
+| MQReLU     | [MQReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L1222)       | [mqrelu](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L888)      |
+| FReLU     | [FReLU](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/layers.py#L1239)       | [frelu](https://github.com/pouyaardehkhani/ActTensor/blob/fd5adadc18b9cf9a060d43e48d3ede7057ff11d3/act_tensor/functions.py#L902)      |
+
+
+<div align="center">
+  <img src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Activation%20Functions.gif"><br>
+</div>
+
 
 
 ## **Which activation it supports?**
