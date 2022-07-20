@@ -633,10 +633,10 @@ Functions are available in ***act_tensor.functions***
 
 55. Logit:
 
-    <img src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Logit.png">
+    <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;\frac{x}{1-x}">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;\frac{x}{1-x}">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Logit.png">    
 </p>
 
 56. GELU:
