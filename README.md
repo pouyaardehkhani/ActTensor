@@ -277,6 +277,8 @@ Functions are available in ***act_tensor.functions***
 
 16. ParametricLinear:
 
+    $f(x) = a*x$
+
 17. PiecewiseLinear:
 
     Choose some xmin and xmax, which is our "range". Everything less than than this range will be 0, and everything greater than this range will be 1. Anything else is linearly-interpolated between.
