@@ -6,6 +6,8 @@
 
 # **ActTensor**: Activation Functions for TensorFlow
 
+![license](https://img.shields.io/github/license/pouyaardehkhani/ActTensor.svg)
+
 ## **What is it?**
 
 ActTensor is a Python package that provides state-of-the-art activation functions which facilitate using them in Deep Learning projects in an easy and fast manner. 
