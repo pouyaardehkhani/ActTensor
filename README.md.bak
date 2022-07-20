@@ -31,7 +31,7 @@ Package Index (PyPI)]()
 
 ```sh
 # PyPI
-pip install ActTensor-tf
+pip install ActTensor_tf
 ```
 
 ## License
