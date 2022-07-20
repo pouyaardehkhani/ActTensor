@@ -599,7 +599,7 @@ Functions are available in ***act_tensor.functions***
 
 51. CELU:
 
-    <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;max(0,x)&plus;min(0,&space;\alpha&space;(exp(\frac{x}{\alpha})−1))">
+    <img src="https://latex.codecogs.com/svg.image?CELU\left&space;(&space;x&space;\right&space;)=&space;max(0,&space;x)&space;&plus;&space;min(0&space;,&space;\alpha&space;(e^{\frac{x}{\alpha&space;}}&space;-1))">
     
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/CELU.png">    
