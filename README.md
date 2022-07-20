@@ -259,10 +259,10 @@ Functions are available in ***act_tensor.functions***
 
 14. Log Sigmoid:
 
-    <img src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/LogSigmoid.png">
+    <img src="https://latex.codecogs.com/svg.image?LogSigmoid(x)=\log\left(\dfrac{1}{1&plus;\exp(-x_i)}\right)">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/HardSigmoid.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/LogSigmoid.png"> 
 </p>
 
 15. SiLU:
