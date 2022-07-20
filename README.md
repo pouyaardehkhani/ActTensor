@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ActTensor%20logo.png"><br>
+  <img src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/ActTensor%20logo.png"><br>
 </div>
 
 ---------
@@ -146,7 +146,7 @@ Classes and Functions are available in ***ActTensor_tf***
 
 
 <div align="center">
-  <img src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Activation%20Functions.gif"><br>
+  <img src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Activation%20Functions.gif"><br>
 </div>
 
 
@@ -158,7 +158,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}x-\lambda&space;&&space;x&space;>&space;\lambda\\&space;x&plus;\lambda&space;&&space;x&space;<&space;-\lambda\\&space;0&space;&&space;otherwise&space;\end{cases}">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/SoftShrink.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/SoftShrink.png"> 
 </p>
 
 2. Hard Shrink:
@@ -166,7 +166,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;\begin{cases}x&space;&&space;x&space;>&space;\lambda\\&space;x&space;&&space;x&space;<&space;-\lambda\\&space;0&space;&&space;otherwise&space;\end{cases}">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/HardShrink.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/HardShrink.png"> 
 </p>
 
 3. GLU:
@@ -216,7 +216,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}x&space;&&space;x&space;\geq&space;0\\0&space;&&space;x&space;<&space;0&space;\end{cases}">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ReLU.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/ReLU.png"> 
 </p>
 
 * [Source Paper : Nair, Vinod, and Geoffrey E. Hinton. "Rectified linear units improve restricted boltzmann machines." In Icml. 2010.](https://www.cs.toronto.edu/~fritz/absps/reluICML.pdf)
@@ -226,7 +226,7 @@ Classes and Functions are available in ***ActTensor_tf***
     $f(x) = x$
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Identity.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Identity.png"> 
 </p>
 
 11. Step:
@@ -234,7 +234,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}1&space;&&space;x&space;<&space;0\\0&space;&&space;x&space;\geq&space;0\end{cases}">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Step.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Step.png"> 
 </p>
 
 12. Sigmoid:
@@ -242,7 +242,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;\frac{1}{1&plus;e^{-x}}">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Sigmoid.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Sigmoid.png"> 
 </p>
 
 * [Source Paper : Han, Jun, and Claudio Moraga. "The influence of the sigmoid function parameters on the speed of backpropagation learning." In International workshop on artificial neural networks, pp. 195-201. Springer, Berlin, Heidelberg, 1995.](https://link.springer.com/chapter/10.1007/3-540-59497-3_175)
@@ -252,7 +252,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;max(0,&space;min(1,\frac{x&plus;1}{2}))">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/HardSigmoid.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/HardSigmoid.png"> 
 </p>
 
 * [Source Paper : Courbariaux, Matthieu, Yoshua Bengio, and Jean-Pierre David. "Binaryconnect: Training deep neural networks with binary weights during propagations." Advances in neural information processing systems 28 (2015).](https://arxiv.org/abs/1511.00363)
@@ -262,7 +262,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?LogSigmoid(x)=\log\left(\dfrac{1}{1&plus;\exp(-x_i)}\right)">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/LogSigmoid.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/LogSigmoid.png"> 
 </p>
 
 15. SiLU:
@@ -270,7 +270,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;x(\frac{1}{1&plus;e^{-x}})">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/SiLU.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/SiLU.png"> 
 </p>
 
 * [Source Paper : Elfwing, Stefan, Eiji Uchibe, and Kenji Doya. "Sigmoid-weighted linear units for neural network function approximation in reinforcement learning." Neural Networks 107 (2018): 3-11.](https://arxiv.org/abs/1702.03118)
@@ -300,7 +300,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;1-e^{-e^x}">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Complementary%20Log-Log.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Complementary%20Log-Log.png"> 
 </p>
 
 * [Source Paper : Gomes, Gecynalda S. da S., and Teresa B. Ludermir. "Complementary log-log and probit: activation functions implemented in artificial neural networks." In 2008 Eighth International Conference on Hybrid Intelligent Systems, pp. 939-942. IEEE, 2008.](https://www.computer.org/csdl/proceedings-article/his/2008/3326a939/12OmNxHrykP)
@@ -310,7 +310,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}-1&space;&&space;x&space;\leq&space;0\\1&space;&&space;x&space;>&space;0\end{cases}">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Bipolar.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Bipolar.png"> 
 </p>
 
 20. Bipolar Sigmoid:
@@ -318,7 +318,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;\frac{1-e^{-x}}{1&plus;e^{-x}}">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/BipolarSigmoid.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/BipolarSigmoid.png"> 
 </p>
 
 * [Source Paper : Mansor, Mohd Asyraf, and Saratha Sathasivam. "Activation function comparison in neural-symbolic integration." In AIP Conference Proceedings, vol. 1750, no. 1, p. 020013. AIP Publishing LLC, 2016.](https://aip.scitation.org/doi/10.1063/1.4954526)
@@ -328,7 +328,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;\frac{e^{x}-e^{-x}}{e^{x}&plus;e^{-x}}">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/tanh.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/tanh.png"> 
 </p>
 
 * [Source Paper : Harrington, Peter de B. "Sigmoid transfer functions in backpropagation neural networks." Analytical Chemistry 65, no. 15 (1993): 2167-2168.](https://pubs.acs.org/doi/pdf/10.1021/ac00063a042)
@@ -338,7 +338,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;x-tanh(x)">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/tanhShrink.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/tanhShrink.png"> 
 </p>
 
 23. LeCunTanh:
@@ -346,7 +346,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;1.7159\&space;tanh(\frac{2}{3}x)">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/LeCunTanh.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/LeCunTanh.png"> 
 </p>
 
 * [Source Paper : LeCun, Yann A., Léon Bottou, Genevieve B. Orr, and Klaus-Robert Müller. "Efficient backprop." In Neural networks: Tricks of the trade, pp. 9-48. Springer, Berlin, Heidelberg, 2012.](http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf)
@@ -356,7 +356,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}-1&space;&&space;x&space;<&space;-1\\x&space;&&space;-1&space;\leq&space;x&space;\leq&space;1\\1&space;&&space;x&space;>&space;1&space;\end{cases}">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/HardTanh.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/HardTanh.png"> 
 </p>
 
 25. TanhExp:
@@ -364,7 +364,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;x\&space;tanh(e^x)">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/TanhExp.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/TanhExp.png"> 
 </p>
 
 * [Source Paper : Liu, Xinyu, and Xiaoguang Di. "TanhExp: A smooth activation function with high convergence speed for lightweight neural networks." IET Computer Vision 15, no. 2 (2021): 136-150.](https://arxiv.org/abs/2003.09855)
@@ -374,7 +374,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;|x|">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Abs.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Abs.png"> 
 </p>
 
 27. SquaredReLU:
@@ -382,7 +382,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}x^2&space;&&space;x&space;\geq&space;0\\0&space;&&space;x&space;<&space;0&space;\end{cases}">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/SquaredReLU.png"> 
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/SquaredReLU.png"> 
 </p>
 
 * [Source Paper : So, David, Wojciech Mańke, Hanxiao Liu, Zihang Dai, Noam Shazeer, and Quoc V. Le. "Searching for Efficient Transformers for Language Modeling." Advances in Neural Information Processing Systems 34 (2021): 6010-6022.](https://arxiv.org/abs/2109.08668)
@@ -392,7 +392,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}x&space;&&space;x&space;\geq&space;0\\&space;\alpha&space;x&space;&&space;x&space;<&space;0&space;\end{cases}">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/PReLU.png">
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/PReLU.png">
 </p>
 
 * [Source Paper : He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. "Delving deep into rectifiers: Surpassing human-level performance on imagenet classification." In Proceedings of the IEEE international conference on computer vision, pp. 1026-1034. 2015.](https://arxiv.org/abs/1502.01852)
@@ -404,7 +404,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?a&space;\sim&space;U(l,u)">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/RReLU.png">   
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/RReLU.png">   
 </p>
 
 * [Source Paper : Xu, Bing, Naiyan Wang, Tianqi Chen, and Mu Li. "Empirical evaluation of rectified activations in convolutional network." arXiv preprint arXiv:1505.00853 (2015).](https://arxiv.org/abs/1505.00853?context=cs)
@@ -414,7 +414,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}x&space;&&space;x&space;\geq&space;0\\&space;0.01&space;x&space;&&space;x&space;<&space;0&space;\end{cases}">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/LeakyReLU.png">
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/LeakyReLU.png">
 </p>
 
 31. ReLU6:
@@ -422,7 +422,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;min(6,&space;max(0,x))">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ReLU6.png">  
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/ReLU6.png">  
 </p>
 
 * [Source Paper : Howard, Andrew G., Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, and Hartwig Adam. "Mobilenets: Efficient convolutional neural networks for mobile vision applications." arXiv preprint arXiv:1704.04861 (2017).](https://arxiv.org/abs/1704.04861)
@@ -432,7 +432,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}(|x|&plus;b)\frac{x}{|x|}&space;&&space;|x|&plus;b&space;\geq&space;0&space;\\0&space;&&space;|x|&plus;b&space;\leq&space;0\end{cases}">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ModReLU.png">
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/ModReLU.png">
 </p>
 
 * [Source Paper : Arjovsky, Martin, Amar Shah, and Yoshua Bengio. "Unitary evolution recurrent neural networks." In International conference on machine learning, pp. 1120-1128. PMLR, 2016.](https://arxiv.org/abs/1511.06464?context=stat)
@@ -442,7 +442,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;max(0,x)&space;&plus;&space;cos(x)">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/CosRelu.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/CosRelu.png">    
 </p>
 
 34. SinReLU:
@@ -450,7 +450,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;max(0,x)&space;&plus;&space;sin(x)">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/SinReLU.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/SinReLU.png">    
 </p>
 
 35. Probit:
@@ -458,7 +458,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;\sqrt{2}\&space;\&space;erfinv(2x&space;-&space;1)">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Probit.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Probit.png">    
 </p>
 
 36. Cosine:
@@ -466,7 +466,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;Cos(x)">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Cosine.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Cosine.png">    
 </p>
 
 37. Gaussian:
@@ -474,7 +474,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;e^{-\frac{1}{2}x^2}">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Gaussian.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Gaussian.png">    
 </p>
 
 38. Multiquadratic:
@@ -484,7 +484,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?\rho(z)&space;=&space;\sqrt{(z&space;-&space;x)^{2}&space;&plus;&space;y^{2}}&space;">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Multiquadratic.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Multiquadratic.png">    
 </p>
 
 39. InvMultiquadratic:
@@ -492,7 +492,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?\rho(z)&space;=&space;\frac{1}{\sqrt{(z&space;-&space;x)^{2}&space;&plus;&space;y^{2}}&space;}">
 
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/InvMultiquadratic.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/InvMultiquadratic.png">    
 </p>
 
 40. SoftPlus:
@@ -500,7 +500,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;ln(1&plus;e^x)">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/SoftPlus.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/SoftPlus.png">    
 </p>
 
 * [Source Paper : Dugas, Charles, Yoshua Bengio, François Bélisle, Claude Nadeau, and René Garcia. "Incorporating second-order functional knowledge for better option pricing." Advances in neural information processing systems 13 (2000).](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.966.2210&rep=rep1&type=pdf)
@@ -510,7 +510,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;x\&space;tanh(SoftPlus(x))">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Mish.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Mish.png">    
 </p>
 
 * [Source Paper : Misra, Diganta. "Mish: A self regularized non-monotonic neural activation function." arXiv preprint arXiv:1908.08681 4, no. 2 (2019): 10-48550.](https://arxiv.org/abs/1908.08681)
@@ -520,7 +520,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;x\&space;tanh(log(1&plus;Sigmoid(x)))">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Smish.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Smish.png">    
 </p>
 
 43. ParametricSmish (PSmish):
@@ -532,7 +532,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?b=&space;\beta&space;x">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/PSmish.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/PSmish.png">    
 </p>
 
 44. Swish:
@@ -540,7 +540,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;\frac{x}{1-e^{-\beta&space;x}}">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Swish.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Swish.png">    
 </p>
 
 * [Source Paper : Ramachandran, Prajit, Barret Zoph, and Quoc V. Le. "Searching for activation functions." arXiv preprint arXiv:1710.05941 (2017).](https://arxiv.org/abs/1710.05941?context=cs.LG)
@@ -550,7 +550,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;\beta\&space;\frac{x}{1-e^{-\beta&space;x}}">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ESwish.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/ESwish.png">    
 </p>
 
 * [Source Paper : Alcaide, Eric. "E-swish: Adjusting activations to different network depths." arXiv preprint arXiv:1801.07145 (2018).](https://arxiv.org/pdf/1801.07145)
@@ -560,7 +560,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;x\&space;\frac{ReLU6(x&plus;3)}{6}">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/HardSwish.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/HardSwish.png">    
 </p>
 
 * [Source Paper : Howard, Andrew, Mark Sandler, Grace Chu, Liang-Chieh Chen, Bo Chen, Mingxing Tan, Weijun Wang et al. "Searching for mobilenetv3." In Proceedings of the IEEE/CVF international conference on computer vision, pp. 1314-1324. 2019.](https://ieeexplore.ieee.org/document/9008835)
@@ -570,7 +570,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;x\&space;cos(x)">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/GCU.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/GCU.png">    
 </p>
 
 * [Source Paper : Noel, Mathew Mithra, Advait Trivedi, and Praneet Dutta. "Growing cosine unit: A novel oscillatory activation function that can speedup training and reduce parameters in convolutional neural networks." arXiv preprint arXiv:2108.12943 (2021).](https://deepai.org/publication/growing-cosine-unit-a-novel-oscillatory-activation-function-that-can-speedup-training-and-reduce-parameters-in-convolutional-neural-networks)
@@ -580,7 +580,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;\frac{x}{1-x&space;e^{-(x&plus;e^x)}}">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/CoLU.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/CoLU.png">    
 </p>
 
 * [Source Paper : Vagerwal, Advait. "Deeper Learning with CoLU Activation." arXiv preprint arXiv:2112.12078 (2021).](https://arxiv.org/abs/2112.12078)
@@ -590,7 +590,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}cx&space;&&space;x&space;>&space;0\\&space;\alpha&space;e^{\frac{x}{b}}-1&space;&&space;x&space;\leq&space;0&space;\end{cases}">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/PELU.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/PELU.png">    
 </p>
 
 * [Source Paper : Trottier, Ludovic, Philippe Giguere, and Brahim Chaib-Draa. "Parametric exponential linear unit for deep convolutional neural networks." In 2017 16th IEEE International Conference on Machine Learning and Applications (ICMLA), pp. 207-214. IEEE, 2017.](https://arxiv.org/abs/1605.09332?context=cs)
@@ -602,7 +602,7 @@ Classes and Functions are available in ***ActTensor_tf***
     where $\alpha \approx 1.6733$ & $\lambda \approx 1.0507$
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/SELU.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/SELU.png">    
 </p>
 
 * [Source Paper : Klambauer, Günter, Thomas Unterthiner, Andreas Mayr, and Sepp Hochreiter. "Self-normalizing neural networks." Advances in neural information processing systems 30 (2017).](https://papers.nips.cc/paper/6698-self-normalizing-neural-networks)
@@ -612,7 +612,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?CELU\left&space;(&space;x&space;\right&space;)=&space;max(0,&space;x)&space;&plus;&space;min(0&space;,&space;\alpha&space;(e^{\frac{x}{\alpha&space;}}&space;-1))">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/CELU.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/CELU.png">    
 </p>
 
 * [Source Paper : Barron, Jonathan T. "Continuously differentiable exponential linear units." arXiv preprint arXiv:1704.07483 (2017).](https://arxiv.org/abs/1704.07483)
@@ -622,7 +622,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;ArcTang(x)">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ArcTan.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/ArcTan.png">    
 </p>
 
 53. ShiftedSoftPlus:
@@ -630,7 +630,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;log(0.5&plus;0.5e^x)">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ShiftedSoftPlus.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/ShiftedSoftPlus.png">    
 </p>
 
 * [Source Paper : Schütt, Kristof, Pieter-Jan Kindermans, Huziel Enoc Sauceda Felix, Stefan Chmiela, Alexandre Tkatchenko, and Klaus-Robert Müller. "Schnet: A continuous-filter convolutional neural network for modeling quantum interactions." Advances in neural information processing systems 30 (2017).](https://dl.acm.org/doi/abs/10.5555/3294771.3294866)
@@ -646,7 +646,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;\frac{x}{1-x}">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Logit.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Logit.png">    
 </p>
 
 56. GELU:
@@ -654,7 +654,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(X)&space;=&space;x&space;\&space;\phi&space;\(&space;x&space;)">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/GELU.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/GELU.png">    
 </p>
 
 57. Softsign:
@@ -662,7 +662,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;\frac{x}{|x|&plus;1}">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Softsign.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Softsign.png">    
 </p>
 
 58. ELiSH:
@@ -670,7 +670,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}\frac{x}{1&plus;e^{-x}}&space;&&space;x&space;\geq&space;0\\&space;\frac{e^x-1}{1&plus;e^{-x}}&space;&&space;x&space;<&space;0&space;\end{cases}">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ELiSH.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/ELiSH.png">    
 </p>
 
 * [Source Paper : Basirat, Mina, and Peter M. Roth. "The quest for the golden activation function." arXiv preprint arXiv:1808.00783 (2018).](https://arxiv.org/abs/1808.00783)
@@ -680,7 +680,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}x\&space;max(0,min(1,\frac{x&plus;1}{2}))&space;&&space;x&space;\geq&space;0\\&space;(e^x-1)&space;max(0,min(1,\frac{x&plus;1}{2}))&space;&&space;x&space;<&space;0&space;\end{cases}">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/HardELiSH.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/HardELiSH.png">    
 </p>
 
 * [Source Paper : Basirat, Mina, and Peter M. Roth. "The quest for the golden activation function." arXiv preprint arXiv:1808.00783 (2018).](https://arxiv.org/abs/1808.00783)
@@ -690,7 +690,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;x\&space;erf(ln(1&plus;e^x))">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Serf.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Serf.png">    
 </p>
 
 * [Source Paper : Nag, Sayan, and Mayukh Bhattacharyya. "SERF: Towards better training of deep neural networks using log-Softplus ERror activation Function." arXiv preprint arXiv:2108.09598 (2021).](https://arxiv.org/abs/2108.09598?context=cs)
@@ -700,7 +700,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}x&space;&&space;x&space;>&space;0\\&space;\alpha&space;(exp(x)-1)&space;&&space;x&space;\leq&space;0&space;\end{cases}">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/ELU.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/ELU.png">    
 </p>
 
 * [Source Paper : Clevert, Djork-Arné, Thomas Unterthiner, and Sepp Hochreiter. "Fast and accurate deep network learning by exponential linear units (elus)." arXiv preprint arXiv:1511.07289 (2015).](https://dblp.org/rec/journals/corr/ClevertUH15)
@@ -710,7 +710,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;x\&space;tanh(gelu(x))">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Phish.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/Phish.png">    
 </p>
 
 * [Source Paper : Naveen, Philip. "Phish: A novel hyper-optimizable activation function." (2022).](https://www.techrxiv.org/articles/preprint/Phish_A_Novel_Hyper-Optimizable_Activation_Function/17283824/2)
@@ -720,7 +720,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}x&space;&&space;x&space;>&space;0\\&space;0.01\&space;x(x-2)&space;&&space;x&space;\leq&space;0&space;\end{cases}">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/QReLU.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/QReLU.png">    
 </p>
 
 * [Source Paper : Parisi, Luca, Daniel Neagu, Renfei Ma, and Felician Campean. "QReLU and m-QReLU: Two novel quantum activation functions to aid medical diagnostics." arXiv preprint arXiv:2010.08031 (2020).](https://arxiv.org/abs/2010.08031)
@@ -730,7 +730,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}x&space;&&space;x&space;>&space;0\\&space;0.01\&space;x&space;-x&space;&&space;x&space;\leq&space;0&space;\end{cases}">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/m-QReLU.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/m-QReLU.png">    
 </p>
 
 * [Source Paper : Parisi, Luca, Daniel Neagu, Renfei Ma, and Felician Campean. "QReLU and m-QReLU: Two novel quantum activation functions to aid medical diagnostics." arXiv preprint arXiv:2010.08031 (2020).](https://arxiv.org/abs/2010.08031)
@@ -740,7 +740,7 @@ Classes and Functions are available in ***ActTensor_tf***
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=\begin{cases}x&plus;b&space;&&space;x&space;>&space;0\\&space;b&space;&&space;x&space;\leq&space;0&space;\end{cases}">
     
 <p align="center"> 
-  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/FReLU.png">    
+  <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/raw/master/images/FReLU.png">    
 </p>
 
 * [Source Paper : Qiu, Suo, Xiangmin Xu, and Bolun Cai. "FReLU: flexible rectified linear units for improving convolutional neural networks." In 2018 24th international conference on pattern recognition (icpr), pp. 1223-1228. IEEE, 2018.](https://arxiv.org/abs/1706.08098)
