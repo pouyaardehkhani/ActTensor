@@ -477,11 +477,17 @@ Functions are available in ***act_tensor.functions***
 
 38. Multiquadratic:
 
+    Choose some point (x,y).
+    
+    <img src="https://latex.codecogs.com/svg.image?\rho(z)&space;=&space;\sqrt{(z&space;-&space;x)^{2}&space;&plus;&space;y^{2}}&space;">
+
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/Multiquadratic.png">    
 </p>
 
 39. InvMultiquadratic:
+
+    <img src="https://latex.codecogs.com/svg.image?\rho(z)&space;=&space;\frac{1}{\sqrt{(z&space;-&space;x)^{2}&space;&plus;&space;y^{2}}&space;}">
 
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/InvMultiquadratic.png">    
