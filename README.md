@@ -6,7 +6,7 @@
 
 # **ActTensor**: Activation Functions for TensorFlow
 
-![license](https://img.shields.io/github/license/pouyaardehkhani/ActTensor.svg)
+![license](https://img.shields.io/github/license/pouyaardehkhani/ActTensor.svg) ![releases](https://img.shields.io/github/release/pouyaardehkhani/ActTensor.svg)
 
 ## **What is it?**
 
