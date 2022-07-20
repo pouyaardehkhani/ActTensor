@@ -171,6 +171,14 @@ Functions are available in ***act_tensor.functions***
 
 3. GLU:
 
+    <img src="https://latex.codecogs.com/svg.image?&space;GLU\left&space;(&space;a,b&space;&space;\right&space;)=&space;a&space;\oplus&space;\sigma&space;\left&space;(&space;b&space;\right&space;)">
+
+<p align="center"> 
+  <img width="700" height="500" src="https://production-media.paperswithcode.com/methods/new_architecture_8UYjVkL.jpg"> 
+</p>
+
+* [Source Paper : Language Modeling with Gated Convolutional Networks](http://arxiv.org/abs/1612.08083v3)
+
 4. Bilinear:
 
 5. ReGLU:
