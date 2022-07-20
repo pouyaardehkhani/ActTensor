@@ -641,7 +641,7 @@ Functions are available in ***act_tensor.functions***
 
 56. GELU:
 
-    <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;x\&space;Φ(x)">
+    <img src="https://latex.codecogs.com/svg.image?f(X)&space;=&space;x&space;\&space;\phi&space;\(&space;x&space;)">
     
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/GELU.png">    
