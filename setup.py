@@ -53,6 +53,8 @@ setup(
     author_email="thedoublepteam@gmail.com",
     install_requires=[
         "tensorflow >= 2.9.1",
+        "numpy",
+        "keras",
     ],
     extras_require={
         "dev": [

@@ -69,7 +69,7 @@ model = tf.keras.models.Sequential([tf.keras.layers.Flatten(),
 NOTE:
 > The main function of the activation layers are also availabe but it maybe defined as different name. Check [this](https://github.com/pouyaardehkhani/ActTensor/edit/master/README.md#activations) for more information.
 ```
-from act_tensor.functions import relu
+from ActTensor_tf import relu
 ```
 
 ## Activations
