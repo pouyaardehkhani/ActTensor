@@ -181,13 +181,35 @@ Functions are available in ***act_tensor.functions***
 
 4. Bilinear:
 
+* [Source Paper : Parameter Efficient Deep Neural Networks with Bilinear Projections](https://arxiv.org/pdf/2011.01391)
+
 5. ReGLU:
+
+    ReGLU is an activation function which is a variant of GLU. 
+
+    <img src="https://latex.codecogs.com/svg.image?ReGLU\left&space;(&space;x,&space;W,&space;V,&space;b,&space;c&space;\right&space;)=&space;max(0,&space;xW&space;&plus;&space;b)&space;\oplus&space;(xV&space;&plus;&space;b)">
+
+* [Source Paper : GLU Variants Improve Transformer](https://arxiv.org/abs/2002.05202v1)
 
 6. GeGLU:
 
+    GeGLU is an activation function which is a variant of GLU. 
+
+    <img src="https://latex.codecogs.com/svg.image?GeGLU\left&space;(&space;x,&space;W,&space;V,&space;b,&space;c&space;\right&space;)=&space;GELU(xW&space;&plus;&space;b)&space;\oplus&space;(xV&space;&plus;&space;b)">
+
+* [Source Paper : GLU Variants Improve Transformer](https://arxiv.org/abs/2002.05202v1)
+
 7. SwiGLU:
 
+    SwiGLU is an activation function which is a variant of GLU. 
+
+    <img src="https://latex.codecogs.com/svg.image?SwiGLU\left&space;(&space;x,&space;W,&space;V,&space;b,&space;c&space;\right&space;)=&space;Swish_b(xW&space;&plus;&space;b)&space;\oplus&space;(xV&space;&plus;&space;b)">
+
+* [Source Paper : GLU Variants Improve Transformer](https://arxiv.org/abs/2002.05202v1)
+
 8. SeGLU:
+
+    SeGLU is an activation function which is a variant of GLU. 
 
 9. ReLU:
 
