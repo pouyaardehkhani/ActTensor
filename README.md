@@ -42,7 +42,7 @@ pip install act-tensor
 ```sh
 import tensorflow as tf
 import numpy as np
-from act_tensor.layers import ReLU # name of the layer
+from act_tensor.activations import ReLU # name of the layer
 ```
 functional api
 
@@ -73,9 +73,7 @@ from act_tensor.functions import relu
 
 ## Activations
 
-Classes are available in ***act_tensor.layers***
-
-Functions are available in ***act_tensor.functions***
+Classes and Functions are available in ***act_tensor.activations***
 
 
 | Activation Name | Class Name | Function Name |
