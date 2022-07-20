@@ -13,7 +13,7 @@
 ActTensor is a Python package that provides state-of-the-art activation functions which facilitate using them in Deep Learning projects in an easy and fast manner. 
 
 ## **Why not using tf.keras.activations?**
-As you may know, TensorFlow only has a few defined activation functions and most importantly it does not include newly-introduced activation functions. Wrting another one requires time and energy; however, This package has most of the widely-used, and even state-of-the-art activation functions that are ready to use in your models.
+As you may know, TensorFlow only has a few defined activation functions and most importantly it does not include newly-introduced activation functions. Wrting another one requires time and energy; however, this package has most of the widely-used, and even state-of-the-art activation functions that are ready to use in your models.
 
 ## Requirements
 
@@ -31,7 +31,7 @@ Package Index (PyPI)]()
 
 ```sh
 # PyPI
-pip install act-tensor
+pip install ActTensor_tf
 ```
 
 ## License
@@ -42,7 +42,7 @@ pip install act-tensor
 ```sh
 import tensorflow as tf
 import numpy as np
-from act_tensor.activations import ReLU # name of the layer
+from ActTensor_tf import ReLU # name of the layer
 ```
 functional api
 
@@ -73,7 +73,7 @@ from act_tensor.functions import relu
 
 ## Activations
 
-Classes and Functions are available in ***act_tensor.activations***
+Classes and Functions are available in ***ActTensor_tf***
 
 
 | Activation Name | Class Name | Function Name |
@@ -151,7 +151,7 @@ Classes and Functions are available in ***act_tensor.activations***
 
 
 
-## **Which activation it supports?**
+## **Which activation functions it supports?**
 
 1. Soft Shrink:
 

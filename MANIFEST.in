@@ -1,6 +1,2 @@
-include act_tensor/*.png
-include act_tensor/*.jpg
-include act_tensor/*.ttf
-include image/*.png
-include image/*.jpg
-include image/*.ttf
+include LICENSE
+recursive-include ActTensor_tf *.py
