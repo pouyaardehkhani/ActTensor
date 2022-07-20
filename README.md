@@ -279,6 +279,20 @@ Functions are available in ***act_tensor.functions***
 
 17. PiecewiseLinear:
 
+    Choose some xmin and xmax, which is our "range". Everything less than than this range will be 0, and everything greater than this range will be 1. Anything else is linearly-interpolated between.
+
+    <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;\begin{cases}0&space;&&space;x&space;<&space;x_{min}\\&space;mx&space;&plus;&space;b&space;&&space;x_{min}&space;<&space;x&space;<&space;x_{max}\\&space;1&space;&&space;x&space;>&space;x_{xmax}&space;\end{cases}">
+    
+    
+<img src="https://latex.codecogs.com/svg.image?m&space;=&space;\frac{1}{x_{max}&space;-&space;x_{min}}">
+    
+    
+<img src="https://latex.codecogs.com/svg.image?b&space;=&space;-mx_{min}&space;=&space;1&space;-&space;mx_{max}">
+
+<p align="center"> 
+  <img width="700" height="400" src="https://i.stack.imgur.com/cguIH.png"> 
+</p>
+
 18. Complementary Log-Log (CLL):
 
     <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;1-e^{-e^x}">
