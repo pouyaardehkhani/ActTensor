@@ -589,7 +589,9 @@ Functions are available in ***act_tensor.functions***
 
 50. SELU:
 
-    <img src="https://latex.codecogs.com/svg.image?f(x)&space;=&space;scale\&space;\times&space;(max(0,x)&plus;min(0,\alpha∗(e^x−1)))">
+    <img src="https://latex.codecogs.com/svg.image?f\left(x\right)&space;=&space;\lambda{x}&space;\text{&space;if&space;}&space;x&space;\geq{0}$$&space;$$f\left(x\right)&space;=&space;\lambda{\alpha\left(\exp\left(x\right)&space;-1&space;\right)}&space;\text{&space;if&space;}&space;x&space;<&space;0">
+    
+    where $\alpha \approx 1.6733$ & $\lambda \approx 1.0507$
     
 <p align="center"> 
   <img width="700" height="400" src="https://github.com/pouyaardehkhani/ActTensor/blob/master/images/SELU.png">    
